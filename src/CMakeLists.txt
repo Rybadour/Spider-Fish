@@ -1,0 +1,5 @@
+# src
+
+FILE(GLOB_RECURSE SPIFI_SRCS *.cpp)
+ADD_EXECUTABLE(spifi_game ${SPIFI_SRCS})
+TARGET_LINK_LIBRARIES(spifi_game ${LIBS})

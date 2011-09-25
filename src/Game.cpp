@@ -74,6 +74,13 @@ bool Game::start()
             {
                 it->second->handleEvent(&_eventManager);
             }
+
+            // If the user wants to close the game
+            if (_eventManager.type == SDL_QUIT)
+			{
+				// QUIT
+				_quit = true;
+			}
 		}
 
 		// Drawing
