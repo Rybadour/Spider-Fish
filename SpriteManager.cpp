@@ -14,11 +14,19 @@
 SpriteManager::SpriteManager(SDL_Color colorKey)
 {
 	_colorKey = colorKey;
+
+    spriteMap_ = SpriteMap();
+    spriteMap_.clear();
+
+    _imageMap = ImageMap();
+    _imageMap.clear();
+
+    nextSpriteId_ = 0;
 }
 
 Sprite* SpriteManager::createSprite(std::string fileName)
 {
-	SDL_Surface* image;
+	SDL_Surface* image = NULL;
 	if (_imageMap.find(fileName) == _imageMap.end())
 	{
 		// Load the new image
@@ -43,9 +51,24 @@ Sprite* SpriteManager::createSprite(std::string fileName)
 	if (image == NULL)
 		return NULL;
 
-	return &Sprite(this, image);
+    Sprite* newSprite = new Sprite(nextSpriteId_, this, image);
+    nextSpriteId_++;
+    spriteMap_[newSprite->id_] = newSprite;
+	return newSprite;
 }
 
 void SpriteManager::cleanup()
 {
+}
+
+void SpriteManager::draw(SDL_Surface* screen)
+{
+    if (!spriteMap_.empty())
+    {
+        SpriteMap::const_iterator end = spriteMap_.end();
+        for (SpriteMap::const_iterator it = spriteMap_.begin(); it != end; ++it)
+        {
+            it->second->draw(screen);
+        }
+    }
 }

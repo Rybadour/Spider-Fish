@@ -9,8 +9,9 @@
 // Engine
 
 
-Sprite::Sprite(SpriteManager* spriteManager, SDL_Surface* image)
+Sprite::Sprite(uint id, SpriteManager* spriteManager, SDL_Surface* image)
 {
+    this->id_ = id;
 	this->spriteManager = spriteManager;
 	this->_image = image;
 

@@ -9,14 +9,17 @@
 #include <map>
 
 // Engine
+#include "Types.h"
 class Sprite; // Forward declaration, acts like including the header
 
-typedef std::map<std::string, SDL_Surface*> ImageMapDef;
+typedef std::map<uint, Sprite*> SpriteMap;
+typedef std::map<std::string, SDL_Surface*> ImageMap;
 
 class SpriteManager
 {
 public:
 	SpriteManager(SDL_Color colorKey);
+    void draw(SDL_Surface* screen);
 
 	Sprite* createSprite(std::string fileName);
 
@@ -25,7 +28,10 @@ public:
 private:
 	SDL_Color _colorKey;
 
-	ImageMapDef _imageMap;
+    SpriteMap spriteMap_;
+	ImageMap _imageMap;
+
+    uint nextSpriteId_;
 };
 
 #endif
