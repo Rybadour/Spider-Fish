@@ -19,9 +19,11 @@ Running the game
 =======
 
 1. Build the game.
-1. If on Windows, copy all dlls from `lib` to the same directory as the
+2. If on Windows, copy all dlls from `lib` to the same directory as the
    `spifi_game` executable. 
-1. Run the `spifi_game` executable in `build/bin`.
+3. Copy images into the same directory as the executable, or if using 
+	Visual Studios copy the images into the project directory.
+4. Run the `spifi_game` executable in `build/bin`.
 
 Directory structure
 =======
@@ -30,3 +32,4 @@ Directory structure
 * /include - third-party header files
 * /lib - prebuilt third-party libraries
 * /src - cpp source files
+* /resources - images, audio files, etc
