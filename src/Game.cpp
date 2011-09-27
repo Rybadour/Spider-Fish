@@ -2,6 +2,7 @@
 
 // C++
 #include <string>
+#include <time.h>
 
 // SDL
 #include "SDL.h"
@@ -55,13 +56,18 @@ Game::Game(std::string title, int width, int height)
 bool Game::start()
 {
 	// Game loop
+    clock_t lastTimeStep = clock();
+    int msTimeStep = 0;
 	while (!_quit)
 	{
+        msTimeStep = (clock() - lastTimeStep) * (CLOCKS_PER_SEC/1000);
+        lastTimeStep = clock();
+
         // Tell the game objects to update
 		GameObjectMap::const_iterator end = gameObjectsOwned_.end();
         for (GameObjectMap::const_iterator it = gameObjectsOwned_.begin(); it != end; ++it)
         {
-            it->second->update(); // TODO: Eventually pass a timestep value here?
+            it->second->update(msTimeStep); // TODO: Eventually pass a timestep value here?
         }
 
 		// Iterate over all the events this step and tell the game objects about them

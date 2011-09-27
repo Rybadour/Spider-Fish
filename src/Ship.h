@@ -17,13 +17,13 @@ class Ship : public GameObject
         void initialized();
 
         void handleEvent(SDL_Event* event);
-        void update();
+        void update(int msTimeStep);
 
     private:
         Sprite* sprite_;
 
-        float veloX_;
-        float veloY_;
+        float veloX_; // pixels/sec
+        float veloY_; // pixels/sec
 
         float overflowX_;
         float overflowY_;

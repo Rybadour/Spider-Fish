@@ -18,7 +18,7 @@ class GameObject
 
         virtual void initialized() = 0;
         virtual void handleEvent(SDL_Event* event) = 0;
-        virtual void update() = 0;
+        virtual void update(int msTimeStep) = 0;
 
     protected:
         uint id_;
