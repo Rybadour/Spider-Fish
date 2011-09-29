@@ -1,5 +1,7 @@
 #include "Ship.h"
 
+#include <cmath>
+
 // Engine
 #include "Game.h"
 
@@ -17,7 +19,7 @@ Ship::Ship()
 
 void Ship::initialized()
 {
-    sprite_ = owner_->spriteManager->createSprite("ship.png");
+    sprite_ = owner_->spriteManager->createSprite("resources/images/ship.png");
     sprite_->x = 200;
     sprite_->y = 100;
 }
