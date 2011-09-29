@@ -19,7 +19,7 @@ Ship::Ship()
 
 void Ship::initialized()
 {
-    sprite_ = owner_->spriteManager->createSprite("resources/images/ship.png");
+    sprite_ = owner_->spriteManager->createSprite(img_resource("ship.png"));
     sprite_->x = 200;
     sprite_->y = 100;
 }

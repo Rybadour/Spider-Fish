@@ -12,6 +12,9 @@
 #include "Types.h"
 #include "SpriteManager.h"
 // #include "GameObject.h"
+
+#define img_resource(P) "resources/images/"P
+
 class GameObject;
 
 typedef std::map<uint, GameObject*> GameObjectMap;
