@@ -1,2 +1,5 @@
-#compiled program
-spifi
+.DS_Store
+glfw-src/.DS_Store
+*.xcodeproj/*.mode2v3
+*.xcodeproj/*.pbxuser
+*.xcodeproj/xcuserdata/*
