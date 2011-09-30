@@ -4,6 +4,16 @@
 #include "Game.h"
 
 GameObject::GameObject()
+  : id_(0),
+    owner_(NULL)
 {
-    id_ = 0;
+}
+GameObject::GameObject(Game* owner)
+  : id_(0),
+    owner_(owner)
+{
+}
+
+GameObject::~GameObject()
+{
 }

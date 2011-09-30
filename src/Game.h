@@ -4,6 +4,7 @@
 // C++
 #include <string>
 #include <map>
+#include <iostream>
 
 // SDL
 #include "SDL.h"
@@ -23,29 +24,29 @@ const int SCREEN_BPP = 32;
 
 class Game
 {
-    public:
-	    SpriteManager* spriteManager;
+  public:
+    SpriteManager spriteManager;
 
-	    Game(std::string title, int width, int height);
-	    bool start();
+    Game(std::string title, int width, int height);
+    bool start();
 
-        bool addGameObject(GameObject* gameObject);
-        bool removeGameObject(GameObject* gameObject);
+    bool addGameObject(GameObject* gameObject);
+    bool removeGameObject(GameObject* gameObject);
 
-    protected:
-        virtual void handleEvent(SDL_Event* event) = 0;
+  protected:
+    virtual void handleEvent(SDL_Event* event) = 0;
 
-        bool _quit;
+    bool _quit;
 
-    private:
-	    SDL_Surface*	_screen;
-	    SDL_Event		_eventManager;
+  private:
+    SDL_Surface*	_screen;
+    SDL_Event		_eventManager;
 
-        GameObjectMap gameObjectsOwned_;
-        uint nextGameObjectId_;
+    GameObjectMap gameObjectsOwned_;
+    uint nextGameObjectId_;
 
-	    bool initialize(std::string title, int width, int height);
-	    void cleanup();
+    bool initialize(std::string title, int width, int height);
+    void cleanup();
 };
 
 #endif
