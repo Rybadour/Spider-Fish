@@ -90,6 +90,7 @@ bool Game::start()
 		}
 
 		// Drawing
+		SDL_FillRect(_screen, NULL, 0x00000000);
         spriteManager->draw(_screen);
 
         // Refresh screen

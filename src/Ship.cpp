@@ -4,7 +4,7 @@
 #include "Game.h"
 
 // Constant
-const float Ship::SPEED = 100; // pixels/sec
+const float Ship::SPEED = 500; // pixels/sec
 
 Ship::Ship()
 {
@@ -17,7 +17,7 @@ Ship::Ship()
 
 void Ship::initialized()
 {
-    sprite_ = owner_->spriteManager->createSprite("ship.png");
+    sprite_ = owner_->spriteManager->createSprite("resources/images/ship.png");
     sprite_->x = 200;
     sprite_->y = 100;
 }
@@ -57,13 +57,13 @@ void Ship::update(int msTimeStep)
 
     if (overflowX_ >= 1 || overflowX_ <= -1)
     {
-        sprite_->x += floor(overflowX_);
+        sprite_->x += (int)floor(overflowX_);
         overflowX_ = overflowX_ - floor(overflowX_);
     }
 
     if (overflowY_ >= 1  || overflowY_ <= -1)
     {
-        sprite_->y += floor(overflowY_);
+        sprite_->y += (int)floor(overflowY_);
         overflowY_ = overflowY_ - floor(overflowY_);
     }
 }
