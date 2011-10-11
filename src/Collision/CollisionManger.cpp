@@ -4,7 +4,7 @@
 // Engine
 #include "CollisionManager.h"
 
-CollisionManager::CollisionList CollisionManager::getCollisions(PhysicalEntity &target) const {
+CollisionManager::CollisionList CollisionManager::getCollisions(PhysicalEntity const &target) const {
 	
 	// Iterators on candidate spaces
 
@@ -55,25 +55,25 @@ bool CollisionManager::areColliding(PhysicalEntity const &entityA, PhysicalEntit
 		);
 }
 
-void CollisionManager::addEntity(PhysicalEntity &entity) {
+void CollisionManager::addEntity(PhysicalEntity const &entity) const {
 	getGroupSpace(entity.getGroup()).addEntity(entity);
 }
 
-void CollisionManager::removeEntity(PhysicalEntity &entity) {
+void CollisionManager::removeEntity(PhysicalEntity const &entity) const {
 	getGroupSpace(entity.getGroup()).removeEntity(entity);
 }
 
-void CollisionManager::useSpaceForGroup(unsigned int group, CollisionSpace *space) {
+void CollisionManager::useSpaceForGroup(const unsigned int group, CollisionSpace * const space) {
 
 	// disallow overriding a space that already exists
 	assert(_spaces.find(group) == _spaces.end());
 
 	// assign this space to the group
-	_spaces[group] = space;
+	_spaces.insert(spaces_pair_t(group, space));
 
 };
 
-CollisionSpace &CollisionManager::getGroupSpace(unsigned int group) {
+CollisionSpace &CollisionManager::getGroupSpace(const unsigned int group) const {
 
 	// look for the space
 	auto spaceIt = _spaces.find(group);
@@ -90,4 +90,24 @@ CollisionSpace &CollisionManager::getGroupSpace(unsigned int group) {
 
 void CollisionManager::transferSpace(CollisionSpace &oldSpace, CollisionSpace &newSpace) {
 	assert(false && "Space transferring not yet implemented");
+}
+
+void CollisionManager::updateEntity(PhysicalEntity const &entity) const {
+	getGroupSpace(entity.getGroup()).update(entity);
+}
+
+void CollisionManager::updateGroup(const unsigned int group) const {
+	getGroupSpace(group).updateAll();
+}
+
+void CollisionManager::updateAll() const {
+
+	auto it = _spaces.begin();
+	auto end = _spaces.end();
+
+	while (it != end) {
+		it->second->updateAll();
+		++it;
+	}
+
 }

@@ -19,7 +19,7 @@ class CollisionManager {
 	
 private:
 
-	typedef std::map<unsigned int, CollisionSpace *> spaces_t;
+	typedef std::map<const unsigned int, CollisionSpace * const> spaces_t;
 	typedef spaces_t::const_iterator spaces_it_t;
 	typedef spaces_t::value_type spaces_pair_t;
 
@@ -31,7 +31,7 @@ private:
 	class GetSpace {
 	public:
 		
-		typedef CollisionSpace * result_type;
+		typedef CollisionSpace *result_type;
 		
 		CollisionSpace *operator ()(spaces_pair_t const &pair) const {
 			return pair.second;
@@ -44,14 +44,12 @@ private:
 	class GroupMaskFilter {
 	public:
 
-		GroupMaskFilter() { }
-
-		GroupMaskFilter(GroupMaskFilter const &other) {
-			_groupMask = other._groupMask;
+		GroupMaskFilter(GroupMaskFilter const &other) :
+			_groupMask(other._groupMask) {
 		}
 
-		GroupMaskFilter(unsigned int groupMask) {
-			_groupMask = groupMask;
+		GroupMaskFilter(const unsigned int groupMask) :
+			_groupMask(groupMask) {
 		}
 
 		bool operator ()(spaces_pair_t const &pair) {
@@ -59,7 +57,7 @@ private:
 		}
 
 	private:
-		unsigned int _groupMask;
+		const unsigned int _groupMask;
 	};
 
 	/* GetCandidateList function object
@@ -74,15 +72,15 @@ private:
 		typedef CollisionSpace::CandidateList result_type;
 		
 		// basic constructor
-		GetCandidateList(PhysicalEntity &target) : _target(target)
+		GetCandidateList(PhysicalEntity const &target) : _target(target)
 		{ }
 		
-		CollisionSpace::CandidateList operator ()(CollisionSpace *space) const {
+		CollisionSpace::CandidateList operator ()(CollisionSpace const* const space) const {
 			return space->getCandidates(_target);
 		}
 	
 	private:
-		PhysicalEntity &_target;
+		PhysicalEntity const &_target;
 	};
 
 	/* CollisionFilter function object
@@ -91,7 +89,7 @@ private:
 	
 	public:
 
-		CollisionFilter(PhysicalEntity &target) : _target(target)
+		CollisionFilter(PhysicalEntity const &target) : _target(target)
 		{ }
 
 		CollisionFilter(CollisionFilter const &other) :
@@ -102,7 +100,7 @@ private:
 		}
 	
 	private:
-		PhysicalEntity &_target;
+		PhysicalEntity const &_target;
 	};
 
 	// iterator only over groups that the target collides with
@@ -131,18 +129,27 @@ public:
 	// list container of all collisions against a target.
 	typedef CollisionList_t CollisionList;
 
-	CollisionList getCollisions(PhysicalEntity &target) const;
+	CollisionList getCollisions(PhysicalEntity const &target) const;
 
 	// adds an entity to the collision manager
-	void addEntity(PhysicalEntity &entity);
+	void addEntity(PhysicalEntity const &entity) const;
 
 	// removes an entity from the collision manager
-	void removeEntity(PhysicalEntity &entity);
+	void removeEntity(PhysicalEntity const &entity) const;
 
 	// tells the collision manager to use a specific space type for
 	// a given entity group. useful for collision optimization. if no space is
 	// given, BruteForceSpace is used by default.
-	void useSpaceForGroup(unsigned int group, CollisionSpace *space);
+	void useSpaceForGroup(const unsigned int group, CollisionSpace * const space);
+
+	// Notifies all CollisionSpaces of an update on this PhysicalEntity
+	void updateEntity(PhysicalEntity const &entity) const;
+
+	// Notifies the space of updates on all of its PhysicalEntities
+	void updateGroup(const unsigned int group) const;
+
+	// Notifies all spaces on updates of all PhyaicalEntities
+	void updateAll() const;
 
 	// tests if two PhysicalEntities are colliding.
 	static bool areColliding(PhysicalEntity const &entityA, PhysicalEntity const &entityB);
@@ -153,7 +160,7 @@ private:
 
 	// returns the space the group is using. this will force a default space
 	// if one is not already given.
-	CollisionSpace &getGroupSpace(unsigned int group);
+	CollisionSpace &getGroupSpace(const unsigned int group) const;
 
 	// copies the entity pointers from the old space to the new space
 	void transferSpace(CollisionSpace &oldSpace, CollisionSpace &newSpace);
