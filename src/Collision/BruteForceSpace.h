@@ -5,14 +5,15 @@
 #include <map>
 
 // boost
-#include <boost/iterator/iterator_facade.hpp>
+#include <boost/iterator/transform_iterator.hpp>
 
 // Engine
 #include "PhysicalEntity.h"
 #include "CollisionSpace.h"
 
-/*
- *
+/* BruteForceSpace
+ * The dumbest but simplest of collision spaces. Assumes that all entities
+ * are candidates to collide with the target.
  */
 class BruteForceSpace: public CollisionSpace
 {
@@ -20,67 +21,57 @@ class BruteForceSpace: public CollisionSpace
 public:
 
   // adds entity to the space
-  virtual void addEntity(PhysicalEntity &entity);
+  void addEntity(PhysicalEntity const &entity);
 
   // removes entity from space
-  virtual void removeEntity(PhysicalEntity &entity);
+  void removeEntity(PhysicalEntity const &entity);
   
   // return true if entity is in this space
-  virtual bool hasEntity(PhysicalEntity &entity) ;
+  bool hasEntity(PhysicalEntity const &entity) const;
   
   // returns an iterator pair on all entities in this space
-  virtual std::pair<AnyForwardIterator<PhysicalEntity>, AnyForwardIterator<PhysicalEntity>> getEntities();
+  PhysicalEntityList getEntities() const;
 
   // if a PhysicalEntity has changed, then this update method must be
   // called before getCandidates() with the changed entity. this allows
   // the collision space to recognize and account for the those changes.
-  virtual void update(PhysicalEntity &entity);
+  void update(PhysicalEntity const &entity);
   
   // assumes all entities in this space need to be reevaluated and does so.
   // this is equivalent to using update() on every entity.
-  virtual void updateAll();
+  void updateAll();
 
   // returns an iterator pair over the potential collisions against the 
   // entity given.
-  virtual std::pair<AnyForwardIterator<PhysicalEntity>, AnyForwardIterator<PhysicalEntity>> 
-    getCandidates(PhysicalEntity &target);
+  CandidateList getCandidates(PhysicalEntity const &target) const;
 
 protected:
 
 private:
 
-  class CandidateIterator: public boost::iterator_facade<
-	CandidateIterator
-  , PhysicalEntity
-  , boost::forward_traversal_tag
-  >
-  {
-	friend BruteForceSpace;
-  private:
+  // convience
+  typedef std::map<unsigned int, PhysicalEntity const &> map_t;
+  typedef map_t::const_iterator map_it_t;
+  typedef map_t::value_type map_pair_t;
 
-	std::map<unsigned int, PhysicalEntity&>::iterator _it;
+  // function object to extract entity from map pair.
+  // used in transform iterator.
+  class GetEntityFromPair {
+  public:
+	  
+	  typedef PhysicalEntity const & result_type;
 
-	CandidateIterator(std::map<unsigned int, PhysicalEntity&>::iterator &it) {
-		_it = it;
-	}
+	  PhysicalEntity const &operator() (map_pair_t const &pair) const {
+		  return pair.second;
+	  }
+  
+  };
 
-	friend class boost::iterator_core_access;
+  typedef boost::transform_iterator<GetEntityFromPair, map_it_t>
+	  EntityIterator;
 
-	void increment() {
-		++_it;
-	}
-
-	bool equal(CandidateIterator const &other) const {
-		return _it == other._it;
-	}
-
-	PhysicalEntity &dereference() const {
-		return _it->second;
-	}
-
-  }; // end class CandidateIterator
-
-  std::map<unsigned int, PhysicalEntity&> _entities;
+  // storage for all entities in this space
+  map_t _entities;
 
 };
 

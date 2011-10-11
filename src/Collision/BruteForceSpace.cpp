@@ -7,34 +7,37 @@
 #include "../Util/AnyForwardIterator.h"
 
 // adds entity to the space
-void BruteForceSpace::addEntity(PhysicalEntity &entity) {
-  _entities.insert(std::pair<unsigned int, PhysicalEntity&>(entity.getId(), entity));
+void BruteForceSpace::addEntity(PhysicalEntity const &entity) {
+  _entities.insert(map_pair_t(entity.getId(), entity));
 }
 
 // removes entity from space
-void BruteForceSpace::removeEntity(PhysicalEntity &entity) {
+void BruteForceSpace::removeEntity(PhysicalEntity const &entity) {
   _entities.erase(entity.getId());
 }
 
 // return true if entity is in this space
-bool BruteForceSpace::hasEntity(PhysicalEntity &entity) {
+bool BruteForceSpace::hasEntity(PhysicalEntity const &entity) const {
   return _entities.find(entity.getId()) != _entities.end();
 }
 
 // returns an iterator pair on all entities in this space
-std::pair<AnyForwardIterator<PhysicalEntity>, AnyForwardIterator<PhysicalEntity> >
-  BruteForceSpace::getEntities()
+BruteForceSpace::PhysicalEntityList BruteForceSpace::getEntities() const
 {
-  return std::pair<AnyForwardIterator<PhysicalEntity>, AnyForwardIterator<PhysicalEntity> >(
-    AnyForwardIterator<PhysicalEntity>(CandidateIterator(_entities.begin())),
-    AnyForwardIterator<PhysicalEntity>(CandidateIterator(_entities.end()))
+  return PhysicalEntityList(
+    Iterator(
+	  EntityIterator(_entities.begin(), GetEntityFromPair())
+	)
+  , Iterator(
+      EntityIterator(_entities.end(), GetEntityFromPair())
+	)
   );
 }
 
 // if a PhysicalEntity has changed, then this update method must be
 // called before getCandidates() with the changed entity. this allows
 // the collision space to recognize and account for the those changes.
-void BruteForceSpace::update(PhysicalEntity &entity) {
+void BruteForceSpace::update(PhysicalEntity const &entity) {
   // no update is done in a brute force space
 }
 
@@ -46,9 +49,15 @@ void BruteForceSpace::updateAll() {
 
 // returns an iterator pair over the potential collisions against the 
 // entity given.
-std::pair<AnyForwardIterator<PhysicalEntity>, AnyForwardIterator<PhysicalEntity> > 
-  BruteForceSpace::getCandidates(PhysicalEntity &target)
+BruteForceSpace::CandidateList BruteForceSpace::getCandidates(PhysicalEntity const &target) const
 {
   // all entities are candidates in brute force space
-  return getEntities();
+  return CandidateList(
+    Iterator(
+	  EntityIterator(_entities.begin(), GetEntityFromPair())
+	)
+  , Iterator(
+      EntityIterator(_entities.end(), GetEntityFromPair())
+	)
+  );
 }

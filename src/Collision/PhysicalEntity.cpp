@@ -2,46 +2,56 @@
 
 #include <vector>
 
+// initialize the first id to 0
 unsigned int PhysicalEntity::_nextId = 0;
 
-PhysicalEntity::PhysicalEntity(unsigned int width, unsigned int height,
-	unsigned int x, unsigned int y)
+PhysicalEntity::PhysicalEntity(unsigned int group, unsigned int groupMask, 
+	unsigned int width, unsigned int height, unsigned int x, unsigned int y)
 {
-	_width = width;
-	_height = height;
-	_x = x;
-	_y = y;
-	_id = PhysicalEntity::_nextId;
+	// setup basic attributes
+	setGroup(group);
+	setGroupMask(groupMask);
+	setWidth(width);
+	setHeight(height);
+	setX(x);
+	setY(y);
+
+	// assign the next id in sequence
+	setId(PhysicalEntity::_nextId);
 	++PhysicalEntity::_nextId;
 }
 
 // returns entity id
-unsigned int PhysicalEntity::getId() {
+unsigned int PhysicalEntity::getId() const {
 	return _id;
+}
+
+void PhysicalEntity::setId(unsigned int id) {
+	_id = id;
 }
   
 // returns left-most x
-int PhysicalEntity::getLeft() {
+int PhysicalEntity::getLeft() const {
 	return _x;
 }
 
 // returns right-most x
-int PhysicalEntity::getRight() {
+int PhysicalEntity::getRight() const {
 	return _x + _width;
 }
 
 // returns top-most y
-int PhysicalEntity::getTop() {
+int PhysicalEntity::getTop() const {
 	return _y;
 }
 
 // returns bottom-most y
-int PhysicalEntity::getBottom() {
+int PhysicalEntity::getBottom() const {
 	return _y + _height;
 }
 
 // width of entity
-unsigned int PhysicalEntity::getWidth() {
+unsigned int PhysicalEntity::getWidth() const {
 	return _width;
 }
 
@@ -50,7 +60,7 @@ void PhysicalEntity::setWidth(unsigned int width) {
 }
 
 // height of entity
-unsigned int PhysicalEntity::getHeight() {
+unsigned int PhysicalEntity::getHeight() const {
 	return _height;
 }
 
@@ -59,7 +69,7 @@ void PhysicalEntity::setHeight(unsigned int height) {
 }
 
 // top left x position
-int PhysicalEntity::getX() {
+int PhysicalEntity::getX() const {
 	return _x;
 }
 
@@ -68,7 +78,7 @@ void PhysicalEntity::setX(int x) {
 }
 
 // top left y position
-int PhysicalEntity::getY() {
+int PhysicalEntity::getY() const {
 	return _y;
 }
 
@@ -77,7 +87,7 @@ void PhysicalEntity::setY(int y) {
 }
 
 // group
-unsigned int PhysicalEntity::getGroup() {
+unsigned int PhysicalEntity::getGroup() const {
 	return _group;
 }
 
@@ -86,7 +96,7 @@ void PhysicalEntity::setGroup(unsigned int group) {
 }
 
 // groupMask
-unsigned int PhysicalEntity::getGroupMask() {
+unsigned int PhysicalEntity::getGroupMask() const {
 	return _groupMask;
 }
 
@@ -94,6 +104,6 @@ void PhysicalEntity::setGroupMask(unsigned int groupMask) {
 	_groupMask = groupMask;
 }
 
-bool PhysicalEntity::getCollidesWithGroup(unsigned int group) {
+bool PhysicalEntity::getCollidesWithGroup(unsigned int group) const {
 	return (_groupMask & group) > 0;
 }
