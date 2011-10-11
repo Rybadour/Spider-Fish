@@ -4,7 +4,6 @@
 // Engine
 #include "BruteForceSpace.h"
 #include "PhysicalEntity.h"
-#include "../Util/AnyForwardIterator.h"
 
 // adds entity to the space
 void BruteForceSpace::addEntity(PhysicalEntity const &entity) {

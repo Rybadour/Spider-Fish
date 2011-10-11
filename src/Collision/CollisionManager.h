@@ -14,7 +14,6 @@
 #include "CollisionSpace.h"
 #include "../Util/Iterator2D.h"
 #include "../Util/FauxContainer.h"
-#include "../Util/AnyForwardIterator.h"
 
 class CollisionManager {
 	
