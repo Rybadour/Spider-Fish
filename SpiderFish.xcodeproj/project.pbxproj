@@ -1,0 +1,1086 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		7049D8F2E4D34E0BB7886343 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C737A522F8E94AB7B7BE0F5B /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				F3AF34CCF29849309222D5DF /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		C25D4F71264B423484073927 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 20778494856748DAA821D472 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				F0E0862DA74C447489731A2D /* CMake Rules */,
+			);
+			dependencies = (
+				A9EF38004A46405687EEBA00 /* PBXTargetDependency */,
+				35610AE4184740EE8490969A /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		151207DF7805484D99D82834 /* BruteForceSpace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A3FAC3C36E1442FA6461577 /* BruteForceSpace.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		30D6EB3C7F3E473D98907DA7 /* CollisionSpace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10787B8C52E24C68B5DF1CEE /* CollisionSpace.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		3D5B14AAEF7B412F92403555 /* Iterator2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 605423529EEC45DCA30BB83E /* Iterator2D.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		617E6D974CE144AA8D4D0C5C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 596A9592B0E448FCBED38013 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		6C4B6E881150440697B783D0 /* CollisionManger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8470CFE79048A69E2B0AAF /* CollisionManger.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		6F23B29BFAEF408397B495F5 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 558CC07690E0411C8AC81EB8 /* Game.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		7653AE011444FD22006226E8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7653AE001444FD22006226E8 /* Cocoa.framework */; };
+		7653AE0B1444FD22006226E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7653AE091444FD22006226E8 /* InfoPlist.strings */; };
+		7653AE111444FD22006226E8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7653AE0F1444FD22006226E8 /* Credits.rtf */; };
+		7653AE171444FD23006226E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7653AE151444FD23006226E8 /* MainMenu.xib */; };
+		7653AE1E1444FD40006226E8 /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10E87A457E71457B9ADF8A8A /* ObjectPool.cpp */; };
+		7653AE1F1444FD42006226E8 /* Iterator2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 605423529EEC45DCA30BB83E /* Iterator2D.cpp */; };
+		7653AE201444FD44006226E8 /* FauxContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E26EE52FF34A7FA643EBD8 /* FauxContainer.cpp */; };
+		7653AE211444FD46006226E8 /* SpriteManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0E90E118C4FD28C226426 /* SpriteManager.cpp */; };
+		7653AE221444FD4B006226E8 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B92D2ECCB4474D45B08A683E /* Sprite.cpp */; };
+		7653AE231444FD4C006226E8 /* SpiderFishGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2561591AE5D643BA8EFA0B3C /* SpiderFishGame.cpp */; };
+		7653AE241444FD4E006226E8 /* Ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D266BE2598B24B5596EC0F18 /* Ship.cpp */; };
+		7653AE251444FD58006226E8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 596A9592B0E448FCBED38013 /* main.cpp */; };
+		7653AE261444FD5A006226E8 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68820B9D385846CCA8C5CE4B /* GameObject.cpp */; };
+		7653AE271444FD5C006226E8 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 558CC07690E0411C8AC81EB8 /* Game.cpp */; };
+		7653AE281444FD5E006226E8 /* PhysicalEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98CA716F05A447D68E84477E /* PhysicalEntity.cpp */; };
+		7653AE291444FD5F006226E8 /* CollisionSpace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10787B8C52E24C68B5DF1CEE /* CollisionSpace.cpp */; };
+		7653AE2A1444FD61006226E8 /* CollisionManger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8470CFE79048A69E2B0AAF /* CollisionManger.cpp */; };
+		7653AE2B1444FD62006226E8 /* BruteForceSpace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A3FAC3C36E1442FA6461577 /* BruteForceSpace.cpp */; };
+		7653AE3414450136006226E8 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7653AE301444FF07006226E8 /* SDL_image.framework */; };
+		7653AE3514450136006226E8 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7653AE311444FF07006226E8 /* SDL_mixer.framework */; };
+		7653AE3814450136006226E8 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7653AE3614450136006226E8 /* SDL_ttf.framework */; };
+		7653AE3914450136006226E8 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7653AE3714450136006226E8 /* SDL.framework */; };
+		7653AE3C1445025A006226E8 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7653AE3B1445025A006226E8 /* SDLMain.m */; };
+		7653AE4014450286006226E8 /* SDL_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7653AE3614450136006226E8 /* SDL_ttf.framework */; };
+		7653AE4114450286006226E8 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7653AE3714450136006226E8 /* SDL.framework */; };
+		7653AE4214450286006226E8 /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7653AE301444FF07006226E8 /* SDL_image.framework */; };
+		7653AE4314450286006226E8 /* SDL_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7653AE311444FF07006226E8 /* SDL_mixer.framework */; };
+		7653AE4514450336006226E8 /* ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 7653AE4414450336006226E8 /* ship.png */; };
+		7653AE4714450364006226E8 /* resources.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7653AE4614450364006226E8 /* resources.mm */; };
+		9248E82AFD68450F86215079 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B92D2ECCB4474D45B08A683E /* Sprite.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		98B90018BA27468A9B2DB6EA /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10E87A457E71457B9ADF8A8A /* ObjectPool.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		B89600E32EAD46ED826AF69C /* Ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D266BE2598B24B5596EC0F18 /* Ship.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		B93EE0D983054735BE6D7E78 /* FauxContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E26EE52FF34A7FA643EBD8 /* FauxContainer.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		BA9F152D85F2455AA599C390 /* SpriteManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0E90E118C4FD28C226426 /* SpriteManager.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C08455737B3D4F54A5A0B2FC /* SpiderFishGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2561591AE5D643BA8EFA0B3C /* SpiderFishGame.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		CF04E14CBA65425F94BAA6A8 /* PhysicalEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98CA716F05A447D68E84477E /* PhysicalEntity.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		F508BEF122AC49A388990964 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68820B9D385846CCA8C5CE4B /* GameObject.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C03E07EDC494A74953E2B65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D435EB56484407FA0545876 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7049D8F2E4D34E0BB7886343;
+			remoteInfo = ZERO_CHECK;
+		};
+		8CC3795E173446EDB2E0D78F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D435EB56484407FA0545876 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0DAF9D2B81740F58952F2F2;
+			remoteInfo = spifi_game;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7653AE3D14450269006226E8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7653AE4014450286006226E8 /* SDL_ttf.framework in CopyFiles */,
+				7653AE4114450286006226E8 /* SDL.framework in CopyFiles */,
+				7653AE4214450286006226E8 /* SDL_image.framework in CopyFiles */,
+				7653AE4314450286006226E8 /* SDL_mixer.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0A3FAC3C36E1442FA6461577 /* BruteForceSpace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BruteForceSpace.cpp; path = src/Collision/BruteForceSpace.cpp; sourceTree = SOURCE_ROOT; };
+		10787B8C52E24C68B5DF1CEE /* CollisionSpace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionSpace.cpp; path = src/Collision/CollisionSpace.cpp; sourceTree = SOURCE_ROOT; };
+		10E87A457E71457B9ADF8A8A /* ObjectPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectPool.cpp; path = src/Util/ObjectPool.cpp; sourceTree = SOURCE_ROOT; };
+		2561591AE5D643BA8EFA0B3C /* SpiderFishGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpiderFishGame.cpp; path = src/SpiderFishGame.cpp; sourceTree = SOURCE_ROOT; };
+		4F8470CFE79048A69E2B0AAF /* CollisionManger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionManger.cpp; path = src/Collision/CollisionManger.cpp; sourceTree = SOURCE_ROOT; };
+		558CC07690E0411C8AC81EB8 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = src/Game.cpp; sourceTree = SOURCE_ROOT; };
+		596A9592B0E448FCBED38013 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		605423529EEC45DCA30BB83E /* Iterator2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Iterator2D.cpp; path = src/Util/Iterator2D.cpp; sourceTree = SOURCE_ROOT; };
+		68820B9D385846CCA8C5CE4B /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = src/GameObject.cpp; sourceTree = SOURCE_ROOT; };
+		7653ADFD1444FD22006226E8 /* SpiderFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiderFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7653AE001444FD22006226E8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7653AE031444FD22006226E8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7653AE041444FD22006226E8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7653AE051444FD22006226E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7653AE081444FD22006226E8 /* SpiderFish-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpiderFish-Info.plist"; sourceTree = "<group>"; };
+		7653AE0A1444FD22006226E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7653AE0C1444FD22006226E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7653AE0E1444FD22006226E8 /* SpiderFish-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpiderFish-Prefix.pch"; sourceTree = "<group>"; };
+		7653AE101444FD22006226E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7653AE121444FD22006226E8 /* ifAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ifAppDelegate.h; sourceTree = "<group>"; };
+		7653AE131444FD22006226E8 /* ifAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ifAppDelegate.m; sourceTree = "<group>"; };
+		7653AE161444FD23006226E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7653AE301444FF07006226E8 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = ../../../../Library/Frameworks/SDL_image.framework; sourceTree = "<group>"; };
+		7653AE311444FF07006226E8 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = ../../../../Library/Frameworks/SDL_mixer.framework; sourceTree = "<group>"; };
+		7653AE3614450136006226E8 /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_ttf.framework; path = ../../../../Library/Frameworks/SDL_ttf.framework; sourceTree = "<group>"; };
+		7653AE3714450136006226E8 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = ../../../../Library/Frameworks/SDL.framework; sourceTree = "<group>"; };
+		7653AE3A1445025A006226E8 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = "<group>"; };
+		7653AE3B1445025A006226E8 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
+		7653AE4414450336006226E8 /* ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship.png; path = resources/images/ship.png; sourceTree = "<group>"; };
+		7653AE4614450364006226E8 /* resources.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = resources.mm; path = "glfw-src/Spider-Fish/mac/resources.mm"; sourceTree = "<group>"; };
+		7653AE481445036D006226E8 /* resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resources.h; path = "glfw-src/Spider-Fish/resources.h"; sourceTree = "<group>"; };
+		7DC0E90E118C4FD28C226426 /* SpriteManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpriteManager.cpp; path = src/SpriteManager.cpp; sourceTree = SOURCE_ROOT; };
+		7FEB61B89802439DA4633D74 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.text; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		84E26EE52FF34A7FA643EBD8 /* FauxContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FauxContainer.cpp; path = src/Util/FauxContainer.cpp; sourceTree = SOURCE_ROOT; };
+		98CA716F05A447D68E84477E /* PhysicalEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicalEntity.cpp; path = src/Collision/PhysicalEntity.cpp; sourceTree = SOURCE_ROOT; };
+		B03AEB3F548047DEAA74F7DE /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B92D2ECCB4474D45B08A683E /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sprite.cpp; path = src/Sprite.cpp; sourceTree = SOURCE_ROOT; };
+		D266BE2598B24B5596EC0F18 /* Ship.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ship.cpp; path = src/Ship.cpp; sourceTree = SOURCE_ROOT; };
+		D38513C0A4B142DE94D77CAF /* spifi_game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = spifi_game; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7653ADFA1444FD22006226E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7653AE3814450136006226E8 /* SDL_ttf.framework in Frameworks */,
+				7653AE3914450136006226E8 /* SDL.framework in Frameworks */,
+				7653AE3414450136006226E8 /* SDL_image.framework in Frameworks */,
+				7653AE3514450136006226E8 /* SDL_mixer.framework in Frameworks */,
+				7653AE011444FD22006226E8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11B5216121504209968C8083 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D38513C0A4B142DE94D77CAF /* spifi_game */,
+				7653ADFD1444FD22006226E8 /* SpiderFish.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15D11FA2EFE44375A98B9A9B = {
+			isa = PBXGroup;
+			children = (
+				7653AE3614450136006226E8 /* SDL_ttf.framework */,
+				7653AE3714450136006226E8 /* SDL.framework */,
+				7653AE301444FF07006226E8 /* SDL_image.framework */,
+				7653AE311444FF07006226E8 /* SDL_mixer.framework */,
+				F9E5FAC1AEAE4D5F9DEB395C /* Sources */,
+				6ED71FFC603241E1B4FD0AFD /* Resources */,
+				7653AE061444FD22006226E8 /* SpiderFish */,
+				7653ADFF1444FD22006226E8 /* Frameworks */,
+				11B5216121504209968C8083 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		492D9A8E0A394150BFC50A17 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				DCEFDB75DCE641D385590F8F /* CMake Rules */,
+				B03AEB3F548047DEAA74F7DE /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		6ED71FFC603241E1B4FD0AFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7653AE4414450336006226E8 /* ship.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7653ADFF1444FD22006226E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7653AE001444FD22006226E8 /* Cocoa.framework */,
+				7653AE021444FD22006226E8 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7653AE021444FD22006226E8 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7653AE031444FD22006226E8 /* AppKit.framework */,
+				7653AE041444FD22006226E8 /* CoreData.framework */,
+				7653AE051444FD22006226E8 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7653AE061444FD22006226E8 /* SpiderFish */ = {
+			isa = PBXGroup;
+			children = (
+				7653AE121444FD22006226E8 /* ifAppDelegate.h */,
+				7653AE131444FD22006226E8 /* ifAppDelegate.m */,
+				7653AE151444FD23006226E8 /* MainMenu.xib */,
+				7653AE071444FD22006226E8 /* Supporting Files */,
+			);
+			path = SpiderFish;
+			sourceTree = "<group>";
+		};
+		7653AE071444FD22006226E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7653AE081444FD22006226E8 /* SpiderFish-Info.plist */,
+				7653AE091444FD22006226E8 /* InfoPlist.strings */,
+				7653AE0C1444FD22006226E8 /* main.m */,
+				7653AE0E1444FD22006226E8 /* SpiderFish-Prefix.pch */,
+				7653AE0F1444FD22006226E8 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8824E315F6184F66BDF9A7E6 /* spifi_game */ = {
+			isa = PBXGroup;
+			children = (
+				8DB5FAA565CF4F6E86A3E87C /* Source Files */,
+				7FEB61B89802439DA4633D74 /* CMakeLists.txt */,
+			);
+			name = spifi_game;
+			sourceTree = "<group>";
+		};
+		8DB5FAA565CF4F6E86A3E87C /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				7653AE481445036D006226E8 /* resources.h */,
+				7653AE4614450364006226E8 /* resources.mm */,
+				0A3FAC3C36E1442FA6461577 /* BruteForceSpace.cpp */,
+				4F8470CFE79048A69E2B0AAF /* CollisionManger.cpp */,
+				10787B8C52E24C68B5DF1CEE /* CollisionSpace.cpp */,
+				98CA716F05A447D68E84477E /* PhysicalEntity.cpp */,
+				558CC07690E0411C8AC81EB8 /* Game.cpp */,
+				68820B9D385846CCA8C5CE4B /* GameObject.cpp */,
+				596A9592B0E448FCBED38013 /* main.cpp */,
+				D266BE2598B24B5596EC0F18 /* Ship.cpp */,
+				2561591AE5D643BA8EFA0B3C /* SpiderFishGame.cpp */,
+				B92D2ECCB4474D45B08A683E /* Sprite.cpp */,
+				7DC0E90E118C4FD28C226426 /* SpriteManager.cpp */,
+				84E26EE52FF34A7FA643EBD8 /* FauxContainer.cpp */,
+				605423529EEC45DCA30BB83E /* Iterator2D.cpp */,
+				10E87A457E71457B9ADF8A8A /* ObjectPool.cpp */,
+				7653AE3A1445025A006226E8 /* SDLMain.h */,
+				7653AE3B1445025A006226E8 /* SDLMain.m */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		A335634AE4144E779FB47114 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		DCEFDB75DCE641D385590F8F /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		F8263F80F4D6474888288B66 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				A335634AE4144E779FB47114 /* CMake Rules */,
+				B03AEB3F548047DEAA74F7DE /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		F9E5FAC1AEAE4D5F9DEB395C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				492D9A8E0A394150BFC50A17 /* ALL_BUILD */,
+				F8263F80F4D6474888288B66 /* ZERO_CHECK */,
+				8824E315F6184F66BDF9A7E6 /* spifi_game */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7653ADFC1444FD22006226E8 /* SpiderFish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7653AE1C1444FD23006226E8 /* Build configuration list for PBXNativeTarget "SpiderFish" */;
+			buildPhases = (
+				7653ADF91444FD22006226E8 /* Sources */,
+				7653ADFA1444FD22006226E8 /* Frameworks */,
+				7653ADFB1444FD22006226E8 /* Resources */,
+				7653AE3D14450269006226E8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpiderFish;
+			productName = SpiderFish;
+			productReference = 7653ADFD1444FD22006226E8 /* SpiderFish.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0DAF9D2B81740F58952F2F2 /* spifi_game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8FDCDADECFE41C194C11066 /* Build configuration list for PBXNativeTarget "spifi_game" */;
+			buildPhases = (
+				93572B1DBADD46E5951EFE5D /* Sources */,
+				34E8FD0A80BD45A381385785 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9EF38004A46405687EEBA00 /* PBXTargetDependency */,
+			);
+			name = spifi_game;
+			productName = spifi_game;
+			productReference = D38513C0A4B142DE94D77CAF /* spifi_game */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D435EB56484407FA0545876 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 312B7566932D4948B911C493 /* Build configuration list for PBXProject "SpiderFish" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 15D11FA2EFE44375A98B9A9B;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C25D4F71264B423484073927 /* ALL_BUILD */,
+				7049D8F2E4D34E0BB7886343 /* ZERO_CHECK */,
+				D0DAF9D2B81740F58952F2F2 /* spifi_game */,
+				7653ADFC1444FD22006226E8 /* SpiderFish */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7653ADFB1444FD22006226E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7653AE0B1444FD22006226E8 /* InfoPlist.strings in Resources */,
+				7653AE111444FD22006226E8 /* Credits.rtf in Resources */,
+				7653AE171444FD23006226E8 /* MainMenu.xib in Resources */,
+				7653AE4514450336006226E8 /* ship.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34E8FD0A80BD45A381385785 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/drakej/Projects/Spider-Fish/bin -f /Users/drakej/Projects/Spider-Fish/bin/CMakeScripts/spifi_game_postBuildPhase.make$CONFIGURATION all";
+		};
+		F0E0862DA74C447489731A2D /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/drakej/Projects/Spider-Fish -f /Users/drakej/Projects/Spider-Fish/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+		};
+		F3AF34CCF29849309222D5DF /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/drakej/Projects/Spider-Fish -f /Users/drakej/Projects/Spider-Fish/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7653ADF91444FD22006226E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7653AE211444FD46006226E8 /* SpriteManager.cpp in Sources */,
+				7653AE1E1444FD40006226E8 /* ObjectPool.cpp in Sources */,
+				7653AE231444FD4C006226E8 /* SpiderFishGame.cpp in Sources */,
+				7653AE251444FD58006226E8 /* main.cpp in Sources */,
+				7653AE291444FD5F006226E8 /* CollisionSpace.cpp in Sources */,
+				7653AE2B1444FD62006226E8 /* BruteForceSpace.cpp in Sources */,
+				7653AE2A1444FD61006226E8 /* CollisionManger.cpp in Sources */,
+				7653AE271444FD5C006226E8 /* Game.cpp in Sources */,
+				7653AE281444FD5E006226E8 /* PhysicalEntity.cpp in Sources */,
+				7653AE261444FD5A006226E8 /* GameObject.cpp in Sources */,
+				7653AE241444FD4E006226E8 /* Ship.cpp in Sources */,
+				7653AE221444FD4B006226E8 /* Sprite.cpp in Sources */,
+				7653AE1F1444FD42006226E8 /* Iterator2D.cpp in Sources */,
+				7653AE201444FD44006226E8 /* FauxContainer.cpp in Sources */,
+				7653AE3C1445025A006226E8 /* SDLMain.m in Sources */,
+				7653AE4714450364006226E8 /* resources.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93572B1DBADD46E5951EFE5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				151207DF7805484D99D82834 /* BruteForceSpace.cpp in Sources */,
+				6C4B6E881150440697B783D0 /* CollisionManger.cpp in Sources */,
+				30D6EB3C7F3E473D98907DA7 /* CollisionSpace.cpp in Sources */,
+				CF04E14CBA65425F94BAA6A8 /* PhysicalEntity.cpp in Sources */,
+				6F23B29BFAEF408397B495F5 /* Game.cpp in Sources */,
+				F508BEF122AC49A388990964 /* GameObject.cpp in Sources */,
+				617E6D974CE144AA8D4D0C5C /* main.cpp in Sources */,
+				B89600E32EAD46ED826AF69C /* Ship.cpp in Sources */,
+				C08455737B3D4F54A5A0B2FC /* SpiderFishGame.cpp in Sources */,
+				9248E82AFD68450F86215079 /* Sprite.cpp in Sources */,
+				BA9F152D85F2455AA599C390 /* SpriteManager.cpp in Sources */,
+				B93EE0D983054735BE6D7E78 /* FauxContainer.cpp in Sources */,
+				3D5B14AAEF7B412F92403555 /* Iterator2D.cpp in Sources */,
+				98B90018BA27468A9B2DB6EA /* ObjectPool.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		35610AE4184740EE8490969A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0DAF9D2B81740F58952F2F2 /* spifi_game */;
+			targetProxy = 8CC3795E173446EDB2E0D78F /* PBXContainerItemProxy */;
+		};
+		A9EF38004A46405687EEBA00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7049D8F2E4D34E0BB7886343 /* ZERO_CHECK */;
+			targetProxy = 5C03E07EDC494A74953E2B65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7653AE091444FD22006226E8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7653AE0A1444FD22006226E8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7653AE0F1444FD22006226E8 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7653AE101444FD22006226E8 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		7653AE151444FD23006226E8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7653AE161444FD23006226E8 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04CD009766564B8CB4C2C3C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		16FE17A3F0F04952BC7753B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		2400AF64D95E4B94B4E41310 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "-g";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_image.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_mixer.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_ttf.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDLmain.lib",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = spifi_game;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish/bin";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		2E3986910241421CB1DFD1A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Developer/SDKs/MacOSX10.7.sdk;
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish/build";
+			};
+			name = Debug;
+		};
+		571DF564AABA41789D0B2645 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		5FE2722FA76F41339D49CE38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "-DNDEBUG";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_image.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_mixer.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_ttf.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDLmain.lib",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = spifi_game;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish/bin";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		6A0AEFC3F305434A8E45185D /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "-DNDEBUG";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_image.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_mixer.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_ttf.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDLmain.lib",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = spifi_game;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish/bin";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		7653AE181444FD23006226E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpiderFish/SpiderFish-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Library/Frameworks/SDL.framework/**";
+				INFOPLIST_FILE = "SpiderFish/SpiderFish-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7653AE191444FD23006226E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpiderFish/SpiderFish-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Library/Frameworks/SDL.framework/**";
+				INFOPLIST_FILE = "SpiderFish/SpiderFish-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7653AE1A1444FD23006226E8 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpiderFish/SpiderFish-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Library/Frameworks/SDL.framework/**";
+				INFOPLIST_FILE = "SpiderFish/SpiderFish-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = MinSizeRel;
+		};
+		7653AE1B1444FD23006226E8 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpiderFish/SpiderFish-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Library/Frameworks/SDL.framework/**";
+				INFOPLIST_FILE = "SpiderFish/SpiderFish-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = RelWithDebInfo;
+		};
+		8E16488D4A6142B78898ABDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		94DFF28780DB4216AB6372E6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Developer/SDKs/MacOSX10.7.sdk;
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish/build";
+			};
+			name = MinSizeRel;
+		};
+		9DB85EF3AFD94FD0B9F06C15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		B1A424D8109641769111A450 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		BCEC4EF0BE63478A8C781787 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Developer/SDKs/MacOSX10.7.sdk;
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish/build";
+			};
+			name = RelWithDebInfo;
+		};
+		E2C4159E34004544B6032A3C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "-g";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_image.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_mixer.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDL_ttf.lib",
+					"/Users/drakej/Projects/Spider-Fish/lib/SDLmain.lib",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = spifi_game;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish/bin";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		E309D6399C3A46D3B893D661 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		E821A485359443F4800594D3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/drakej/Projects/Spider-Fish/include";
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		EA10FC2B6C9E442BBA0E2103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Developer/SDKs/MacOSX10.7.sdk;
+				SYMROOT = "/Users/drakej/Projects/Spider-Fish/build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20778494856748DAA821D472 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16FE17A3F0F04952BC7753B5 /* Debug */,
+				9DB85EF3AFD94FD0B9F06C15 /* Release */,
+				E821A485359443F4800594D3 /* MinSizeRel */,
+				E309D6399C3A46D3B893D661 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		312B7566932D4948B911C493 /* Build configuration list for PBXProject "SpiderFish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E3986910241421CB1DFD1A4 /* Debug */,
+				EA10FC2B6C9E442BBA0E2103 /* Release */,
+				94DFF28780DB4216AB6372E6 /* MinSizeRel */,
+				BCEC4EF0BE63478A8C781787 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7653AE1C1444FD23006226E8 /* Build configuration list for PBXNativeTarget "SpiderFish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7653AE181444FD23006226E8 /* Debug */,
+				7653AE191444FD23006226E8 /* Release */,
+				7653AE1A1444FD23006226E8 /* MinSizeRel */,
+				7653AE1B1444FD23006226E8 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A8FDCDADECFE41C194C11066 /* Build configuration list for PBXNativeTarget "spifi_game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2400AF64D95E4B94B4E41310 /* Debug */,
+				5FE2722FA76F41339D49CE38 /* Release */,
+				6A0AEFC3F305434A8E45185D /* MinSizeRel */,
+				E2C4159E34004544B6032A3C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C737A522F8E94AB7B7BE0F5B /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E16488D4A6142B78898ABDF /* Debug */,
+				04CD009766564B8CB4C2C3C3 /* Release */,
+				571DF564AABA41789D0B2645 /* MinSizeRel */,
+				B1A424D8109641769111A450 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D435EB56484407FA0545876 /* Project object */;
+}

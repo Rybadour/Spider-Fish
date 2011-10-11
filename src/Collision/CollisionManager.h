@@ -15,6 +15,7 @@
 #include "../Util/Iterator2D.h"
 #include "../Util/FauxContainer.h"
 
+
 class CollisionManager {
 	
 private:
@@ -65,6 +66,12 @@ private:
 	class GetCandidateList {
 	public:
 
+<<<<<<< HEAD
+=======
+		// empty constructor
+		GetCandidateList() : _target(std::move(PhysicalEntity())) { }
+		
+>>>>>>> Compiles for the Mac
 		GetCandidateList(GetCandidateList const &other) : 
 			_target(other._target) { }
 
@@ -80,7 +87,11 @@ private:
 		}
 	
 	private:
+<<<<<<< HEAD
 		PhysicalEntity const &_target;
+=======
+		PhysicalEntity _target;   // &...
+>>>>>>> Compiles for the Mac
 	};
 
 	/* CollisionFilter function object

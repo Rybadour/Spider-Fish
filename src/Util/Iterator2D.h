@@ -21,11 +21,16 @@ private:
 	// sub-iterator type
 	static decltype((*_it).begin()) SubIt;
 
+    
 	// sub-iterator dereference type
 	static decltype(*((*_it).begin())) Value;
-
+  
 };
-
+/*
+#if __has_feature(cxx_decltype)
+#error has decltype
+#endif
+*/
 /* Iterator2D
  * Given an iterator, iterates on the values returned by the iterators
  * of the containers returned by the given iterator. Assumed that the
@@ -71,8 +76,8 @@ private:
 	It _it;
 	It _itEnd;
 
-	typename decltype(Iterator2DTraits<It>::SubIt) _subIt;
-	typename decltype(Iterator2DTraits<It>::SubIt) _subItEnd;
+	 decltype(Iterator2DTraits<It>::SubIt) _subIt;
+	decltype(Iterator2DTraits<It>::SubIt) _subItEnd;
 
 	// setup the next sub-iterator. this method does
 	// nothing if the sub-iterator is not at its end.

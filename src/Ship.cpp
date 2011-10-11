@@ -1,23 +1,34 @@
+#include <math.h>
+
 #include "Ship.h"
 
 // Engine
 #include "Game.h"
 
+#ifdef __APPLE__
+#include "resources.h"
+#endif
+
+
 // Constant
 const float Ship::SPEED = 100; // pixels/sec
 
-Ship::Ship()
+Ship::Ship() : sprite_(NULL), veloX_(0), veloY_(0), overflowX_(0), overflowY_(0)
 {
-    veloX_ = 0;
+/*    veloX_ = 0;
     veloY_ = 0;
 
     overflowX_ = 0;
-    overflowY_ = 0;
+    overflowY_ = 0;*/
 }
 
 void Ship::initialized()
 {
+#ifdef __APPLE__
+    sprite_ = owner_->spriteManager->createSprite(resourcePathFor("ship.png"));
+#else
     sprite_ = owner_->spriteManager->createSprite("ship.png");
+#endif
     sprite_->x = 200;
     sprite_->y = 100;
 }
