@@ -3,7 +3,6 @@
 
 // Engine
 #include "CollisionManager.h"
-#include "BruteForceSpace.h"
 
 CollisionManager::CollisionList CollisionManager::getCollisions(PhysicalEntity &target) const {
 	
@@ -65,14 +64,12 @@ void CollisionManager::removeEntity(PhysicalEntity &entity) {
 }
 
 void CollisionManager::useSpaceForGroup(unsigned int group, CollisionSpace *space) {
-	
-	// transfer entities from old to new space
-	// transferSpace(getGroupSpace(group), *space);
-	
-	// discard old space and assign the new one
-	_spaces[group] = space;
 
-	// TODO: who is responsible for freeing the old space?
+	// disallow overriding a space that already exists
+	assert(_spaces.find(group) == _spaces.end());
+
+	// assign this space to the group
+	_spaces[group] = space;
 
 };
 
@@ -81,18 +78,13 @@ CollisionSpace &CollisionManager::getGroupSpace(unsigned int group) {
 	// look for the space
 	auto spaceIt = _spaces.find(group);
 
-	CollisionSpace *space;
+	// trying to get a group that doesn't exist is an error.
+	// note to client: did you try to add an entity without
+	// setting up the group with useSpaceForGroup() first?
+	assert(spaceIt != _spaces.end());
 
-	// if no space exists for the group, default to BruteForceSpaces
-	if (spaceIt == _spaces.end()) {
-		space = new BruteForceSpace();
-		_spaces.insert(spaces_pair_t(group, space));
-	}
-	else {
-		space = spaceIt->second;
-	}
-
-	return *space;
+	// return the space by reference
+	return *(spaceIt->second);
 
 };
 
