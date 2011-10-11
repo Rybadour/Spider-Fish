@@ -14,6 +14,7 @@ class Ship : public GameObject
         static const float SPEED;
 
         Ship();
+        Ship(Game*);
         void initialized();
 
         void handleEvent(SDL_Event* event);

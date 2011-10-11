@@ -2,9 +2,10 @@
 
 #include "Ship.h"
 
-SpiderFishGame::SpiderFishGame() : Game("Spider-Fish", 600, 420)
+SpiderFishGame::SpiderFishGame() 
+  : Game("Spider-Fish", 600, 420)
 {
-    this->addGameObject(new Ship());
+    this->addGameObject(new Ship(this));
 }
 
 void SpiderFishGame::handleEvent(SDL_Event* event)
