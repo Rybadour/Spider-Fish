@@ -67,9 +67,6 @@ private:
 	class GetCandidateList {
 	public:
 
-		// empty constructor
-		GetCandidateList() : _target(PhysicalEntity()) { }
-		
 		GetCandidateList(GetCandidateList const &other) : 
 			_target(other._target) { }
 
