@@ -15,6 +15,8 @@ class GameObject
         friend class Game;
 
         GameObject();
+        GameObject(Game*);
+        virtual ~GameObject();
 
         virtual void initialized() = 0;
         virtual void handleEvent(SDL_Event* event) = 0;

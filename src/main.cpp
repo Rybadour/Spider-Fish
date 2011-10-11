@@ -1,4 +1,5 @@
 #include "SpiderFishGame.h"
+#define img_resource(P) "resources/images/"P
 
 int main(int argc, char * args[])
 {
