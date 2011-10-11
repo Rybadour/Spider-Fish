@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		768F2D3D1432BB6400D86246 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768F2D3C1432BB6400D86246 /* Cocoa.framework */; };
+		768F2D471432BB6400D86246 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 768F2D451432BB6400D86246 /* InfoPlist.strings */; };
+		768F2D4D1432BB6400D86246 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 768F2D4B1432BB6400D86246 /* Credits.rtf */; };
+		768F2D5C1432BE1B00D86246 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 768F2D5B1432BE1B00D86246 /* libglfw.dylib */; };
+		768F2D5E1432BE2500D86246 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768F2D5D1432BE2500D86246 /* OpenGL.framework */; };
+		768F2D601432BE3900D86246 /* libglfw.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 768F2D5B1432BE1B00D86246 /* libglfw.dylib */; };
+		768F2D631432C59500D86246 /* fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = 768F2D611432C59500D86246 /* fragment.shader */; };
+		768F2D641432C59500D86246 /* vertex.shader in Resources */ = {isa = PBXBuildFile; fileRef = 768F2D621432C59500D86246 /* vertex.shader */; };
+		768F2D741432C5A600D86246 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 768F2D681432C5A600D86246 /* InfoPlist.strings */; };
+		768F2D751432C5A600D86246 /* resources.mm in Sources */ = {isa = PBXBuildFile; fileRef = 768F2D6A1432C5A600D86246 /* resources.mm */; };
+		768F2D761432C5A600D86246 /* Spider-Fish-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 768F2D6B1432C5A600D86246 /* Spider-Fish-Info.plist */; };
+		768F2D771432C5A600D86246 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768F2D6E1432C5A600D86246 /* Shader.cpp */; };
+		768F2D781432C5A600D86246 /* SpiderFish.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768F2D701432C5A600D86246 /* SpiderFish.cpp */; };
+		768F2D7B143300E400D86246 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768F2D7A143300E400D86246 /* main.cpp */; };
+		768F2D801433038400D86246 /* Ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768F2D7E1433038400D86246 /* Ship.cpp */; };
+		768F2D8314330A7000D86246 /* ship.vertex in Resources */ = {isa = PBXBuildFile; fileRef = 768F2D81143309C900D86246 /* ship.vertex */; };
+		768F2D8614330A9100D86246 /* ship.fragment in Resources */ = {isa = PBXBuildFile; fileRef = 768F2D8414330A8700D86246 /* ship.fragment */; };
+		76D9EA541435007700ACA0C5 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76D9EA531435007700ACA0C5 /* Object.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		768F2D5F1432BE2F00D86246 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				768F2D601432BE3900D86246 /* libglfw.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		768F2D381432BB6400D86246 /* Spider-Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spider-Fish.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		768F2D3C1432BB6400D86246 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		768F2D3F1432BB6400D86246 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		768F2D401432BB6400D86246 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		768F2D411432BB6400D86246 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		768F2D441432BB6400D86246 /* Spider-Fish-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Spider-Fish-Info.plist"; sourceTree = "<group>"; };
+		768F2D461432BB6400D86246 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		768F2D4A1432BB6400D86246 /* Spider-Fish-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spider-Fish-Prefix.pch"; sourceTree = "<group>"; };
+		768F2D4C1432BB6400D86246 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		768F2D5B1432BE1B00D86246 /* libglfw.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.dylib; path = ../../../../../../usr/local/lib/libglfw.dylib; sourceTree = "<group>"; };
+		768F2D5D1432BE2500D86246 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		768F2D611432C59500D86246 /* fragment.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.shader; sourceTree = "<group>"; };
+		768F2D621432C59500D86246 /* vertex.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.shader; sourceTree = "<group>"; };
+		768F2D671432C5A600D86246 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		768F2D691432C5A600D86246 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		768F2D6A1432C5A600D86246 /* resources.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = resources.mm; sourceTree = "<group>"; };
+		768F2D6B1432C5A600D86246 /* Spider-Fish-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Spider-Fish-Info.plist"; sourceTree = "<group>"; };
+		768F2D6C1432C5A600D86246 /* Spider-Fish-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Spider-Fish-Prefix.pch"; sourceTree = "<group>"; };
+		768F2D6D1432C5A600D86246 /* resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resources.h; sourceTree = "<group>"; };
+		768F2D6E1432C5A600D86246 /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		768F2D6F1432C5A600D86246 /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		768F2D701432C5A600D86246 /* SpiderFish.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpiderFish.cpp; sourceTree = "<group>"; };
+		768F2D7A143300E400D86246 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		768F2D7C1433010700D86246 /* GameType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameType.h; sourceTree = "<group>"; };
+		768F2D7D1433022E00D86246 /* SpiderFish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiderFish.h; sourceTree = "<group>"; };
+		768F2D7E1433038400D86246 /* Ship.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ship.cpp; sourceTree = "<group>"; };
+		768F2D7F1433038400D86246 /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
+		768F2D81143309C900D86246 /* ship.vertex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ship.vertex; sourceTree = "<group>"; };
+		768F2D8414330A8700D86246 /* ship.fragment */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ship.fragment; sourceTree = "<group>"; };
+		76D9EA531435007700ACA0C5 /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		76D9EA561435008400ACA0C5 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		768F2D351432BB6400D86246 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				768F2D5E1432BE2500D86246 /* OpenGL.framework in Frameworks */,
+				768F2D5C1432BE1B00D86246 /* libglfw.dylib in Frameworks */,
+				768F2D3D1432BB6400D86246 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		768F2D2D1432BB6300D86246 = {
+			isa = PBXGroup;
+			children = (
+				768F2D8414330A8700D86246 /* ship.fragment */,
+				768F2D81143309C900D86246 /* ship.vertex */,
+				768F2D7E1433038400D86246 /* Ship.cpp */,
+				768F2D7F1433038400D86246 /* Ship.h */,
+				76D9EA531435007700ACA0C5 /* Object.cpp */,
+				76D9EA561435008400ACA0C5 /* Object.h */,
+				768F2D651432C5A600D86246 /* mac */,
+				768F2D6D1432C5A600D86246 /* resources.h */,
+				768F2D6E1432C5A600D86246 /* Shader.cpp */,
+				768F2D6F1432C5A600D86246 /* Shader.h */,
+				768F2D701432C5A600D86246 /* SpiderFish.cpp */,
+				768F2D7D1433022E00D86246 /* SpiderFish.h */,
+				768F2D7C1433010700D86246 /* GameType.h */,
+				768F2D7A143300E400D86246 /* main.cpp */,
+				768F2D611432C59500D86246 /* fragment.shader */,
+				768F2D621432C59500D86246 /* vertex.shader */,
+				768F2D5D1432BE2500D86246 /* OpenGL.framework */,
+				768F2D5B1432BE1B00D86246 /* libglfw.dylib */,
+				768F2D421432BB6400D86246 /* Spider-Fish */,
+				768F2D3B1432BB6400D86246 /* Frameworks */,
+				768F2D391432BB6400D86246 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		768F2D391432BB6400D86246 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				768F2D381432BB6400D86246 /* Spider-Fish.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		768F2D3B1432BB6400D86246 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				768F2D3C1432BB6400D86246 /* Cocoa.framework */,
+				768F2D3E1432BB6400D86246 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		768F2D3E1432BB6400D86246 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				768F2D3F1432BB6400D86246 /* AppKit.framework */,
+				768F2D401432BB6400D86246 /* CoreData.framework */,
+				768F2D411432BB6400D86246 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		768F2D421432BB6400D86246 /* Spider-Fish */ = {
+			isa = PBXGroup;
+			children = (
+				768F2D431432BB6400D86246 /* Supporting Files */,
+			);
+			path = "Spider-Fish";
+			sourceTree = "<group>";
+		};
+		768F2D431432BB6400D86246 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				768F2D441432BB6400D86246 /* Spider-Fish-Info.plist */,
+				768F2D451432BB6400D86246 /* InfoPlist.strings */,
+				768F2D4A1432BB6400D86246 /* Spider-Fish-Prefix.pch */,
+				768F2D4B1432BB6400D86246 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		768F2D651432C5A600D86246 /* mac */ = {
+			isa = PBXGroup;
+			children = (
+				768F2D661432C5A600D86246 /* Credits.rtf */,
+				768F2D681432C5A600D86246 /* InfoPlist.strings */,
+				768F2D6A1432C5A600D86246 /* resources.mm */,
+				768F2D6B1432C5A600D86246 /* Spider-Fish-Info.plist */,
+				768F2D6C1432C5A600D86246 /* Spider-Fish-Prefix.pch */,
+			);
+			path = mac;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		768F2D371432BB6400D86246 /* Spider-Fish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 768F2D561432BB6500D86246 /* Build configuration list for PBXNativeTarget "Spider-Fish" */;
+			buildPhases = (
+				768F2D341432BB6400D86246 /* Sources */,
+				768F2D351432BB6400D86246 /* Frameworks */,
+				768F2D361432BB6400D86246 /* Resources */,
+				768F2D5F1432BE2F00D86246 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Spider-Fish";
+			productName = "Spider-Fish";
+			productReference = 768F2D381432BB6400D86246 /* Spider-Fish.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		768F2D2F1432BB6300D86246 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 768F2D321432BB6300D86246 /* Build configuration list for PBXProject "Spider-Fish" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 768F2D2D1432BB6300D86246;
+			productRefGroup = 768F2D391432BB6400D86246 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				768F2D371432BB6400D86246 /* Spider-Fish */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		768F2D361432BB6400D86246 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				768F2D471432BB6400D86246 /* InfoPlist.strings in Resources */,
+				768F2D8614330A9100D86246 /* ship.fragment in Resources */,
+				768F2D4D1432BB6400D86246 /* Credits.rtf in Resources */,
+				768F2D8314330A7000D86246 /* ship.vertex in Resources */,
+				768F2D631432C59500D86246 /* fragment.shader in Resources */,
+				768F2D641432C59500D86246 /* vertex.shader in Resources */,
+				768F2D741432C5A600D86246 /* InfoPlist.strings in Resources */,
+				768F2D761432C5A600D86246 /* Spider-Fish-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		768F2D341432BB6400D86246 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				768F2D751432C5A600D86246 /* resources.mm in Sources */,
+				768F2D771432C5A600D86246 /* Shader.cpp in Sources */,
+				768F2D781432C5A600D86246 /* SpiderFish.cpp in Sources */,
+				768F2D7B143300E400D86246 /* main.cpp in Sources */,
+				768F2D801433038400D86246 /* Ship.cpp in Sources */,
+				76D9EA541435007700ACA0C5 /* Object.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		768F2D451432BB6400D86246 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				768F2D461432BB6400D86246 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		768F2D4B1432BB6400D86246 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				768F2D4C1432BB6400D86246 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		768F2D661432C5A600D86246 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				768F2D671432C5A600D86246 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		768F2D681432C5A600D86246 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				768F2D691432C5A600D86246 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		768F2D541432BB6500D86246 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		768F2D551432BB6500D86246 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		768F2D571432BB6500D86246 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Spider-Fish/Spider-Fish-Prefix.pch";
+				INFOPLIST_FILE = "Spider-Fish/Spider-Fish-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		768F2D581432BB6500D86246 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Spider-Fish/Spider-Fish-Prefix.pch";
+				INFOPLIST_FILE = "Spider-Fish/Spider-Fish-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		768F2D321432BB6300D86246 /* Build configuration list for PBXProject "Spider-Fish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				768F2D541432BB6500D86246 /* Debug */,
+				768F2D551432BB6500D86246 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		768F2D561432BB6500D86246 /* Build configuration list for PBXNativeTarget "Spider-Fish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				768F2D571432BB6500D86246 /* Debug */,
+				768F2D581432BB6500D86246 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 768F2D2F1432BB6300D86246 /* Project object */;
+}

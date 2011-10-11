@@ -4,7 +4,7 @@
 #include "Game.h"
 
 // Constant
-const float Ship::SPEED = 0.2;
+const float Ship::SPEED = 100; // pixels/sec
 
 Ship::Ship()
 {
@@ -49,11 +49,11 @@ void Ship::handleEvent(SDL_Event* event)
     }
 }
 
-void Ship::update()
+void Ship::update(int msTimeStep)
 {
     // TODO: Refactored to something nicer
-    overflowX_ += veloX_;
-    overflowY_ += veloY_;
+    overflowX_ += veloX_ * ((float)msTimeStep/1000);
+    overflowY_ += veloY_ * ((float)msTimeStep/1000);
 
     if (overflowX_ >= 1 || overflowX_ <= -1)
     {
