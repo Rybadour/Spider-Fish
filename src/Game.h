@@ -7,7 +7,11 @@
 #include <iostream>
 
 // SDL
+#ifdef __APPLE__
+#include <SDL/SDL.h>
+#else
 #include "SDL.h"
+#endif
 
 // Engine
 #include "Types.h"

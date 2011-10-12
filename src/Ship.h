@@ -2,7 +2,11 @@
 #define SHIP_H
 
 // SDL
+#ifdef __APPLE__
+#include <SDL/SDL.h>
+#else
 #include "SDL.h"
+#endif
 
 // Engine
 #include "GameObject.h"
@@ -13,7 +17,6 @@ class Ship : public GameObject
     public:
         static const float SPEED;
 
-        Ship();
         Ship(Game*);
         void initialized();
 
