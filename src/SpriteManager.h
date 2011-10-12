@@ -18,7 +18,9 @@ typedef std::map<std::string, SDL_Surface*> ImageMap;
 class SpriteManager
 {
 public:
-	SpriteManager(SDL_Color colorKey);
+	SDL_Color _colorKey;
+
+	SpriteManager();
     void draw(SDL_Surface* screen);
 
 	Sprite* createSprite(std::string fileName);
@@ -26,8 +28,6 @@ public:
 	void cleanup();
 
 private:
-	SDL_Color _colorKey;
-
     SpriteMap spriteMap_;
 	ImageMap _imageMap;
 

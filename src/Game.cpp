@@ -20,9 +20,8 @@ Game::Game(std::string title, int width, int height)
 
     nextGameObjectId_ = 0;
 
-    // Sprite Manager
-    SDL_Color colorKey = {0, 0xFF, 0xFF};
-	this->spriteManager = new SpriteManager(colorKey);
+	SDL_Color color = {0, 0xFF, 0xFF};
+	this->spriteManager._colorKey = color;
 
 	// Initialize SDL
 	// Note: SDL_INIT_EVERYTHING will also enable joystick, video and cdrom stuff
@@ -55,98 +54,99 @@ Game::Game(std::string title, int width, int height)
 // Initialization and Game loop
 bool Game::start()
 {
-	// Game loop
-    clock_t lastTimeStep = clock();
-    int msTimeStep = 0;
-	while (!_quit)
-	{
-        msTimeStep = (clock() - lastTimeStep) * (CLOCKS_PER_SEC/1000);
-        lastTimeStep = clock();
+  // Game loop
+  Uint32 lastTimeStep = SDL_GetTicks();
+  Uint32 msTimeStep = 0;
+  int eventCount = 0;
+  while (!_quit)
+  {
+    msTimeStep = SDL_GetTicks() - lastTimeStep;
+    lastTimeStep = SDL_GetTicks();
 
-        // Tell the game objects to update
-		GameObjectMap::const_iterator end = gameObjectsOwned_.end();
-        for (GameObjectMap::const_iterator it = gameObjectsOwned_.begin(); it != end; ++it)
-        {
-            it->second->update(msTimeStep); // TODO: Eventually pass a timestep value here?
-        }
+    // Tell the game objects to update
+    GameObjectMap::const_iterator end = gameObjectsOwned_.end();
+    for (GameObjectMap::const_iterator it = gameObjectsOwned_.begin(); it != end; ++it)
+    {
+      it->second->update(msTimeStep); // TODO: Eventually pass a timestep value here?
+    }
 
-		// Iterate over all the events this step and tell the game objects about them
-		while ( SDL_PollEvent(&_eventManager) )
-		{
-            handleEvent(&_eventManager);
+    // Iterate over all the events this step and tell the game objects about them
+    while ( SDL_PollEvent(&_eventManager) )
+    {
+      handleEvent(&_eventManager);
 
-            GameObjectMap::const_iterator end = gameObjectsOwned_.end();
-            for (GameObjectMap::const_iterator it = gameObjectsOwned_.begin(); it != end; ++it)
-            {
-                it->second->handleEvent(&_eventManager);
-            }
+      GameObjectMap::const_iterator end = gameObjectsOwned_.end();
+      for (GameObjectMap::const_iterator it = gameObjectsOwned_.begin(); it != end; ++it)
+      {
+        it->second->handleEvent(&_eventManager);
+      }
 
-            // If the user wants to close the game
-            if (_eventManager.type == SDL_QUIT)
-			{
-				// QUIT
-				_quit = true;
-			}
-		}
+      // If the user wants to close the game
+      if (_eventManager.type == SDL_QUIT)
+      {
+        // QUIT
+        _quit = true;
+      }
+    }
 
-		// Drawing
-		SDL_FillRect(_screen, NULL, 0x00000000);
-        spriteManager->draw(_screen);
+    // Drawing
+	SDL_FillRect(_screen, NULL, 0x00000000);
+    spriteManager.draw(_screen);
 
-        // Refresh screen
-        if(SDL_Flip(_screen) == -1)
-			_quit = true;
-	}
+    // Refresh screen
+    if(SDL_Flip(_screen) == -1)
+      _quit = true;
+  }
 
-	cleanup();
+  cleanup();
 
-	return true;
+  return true;
 }
 
 bool Game::addGameObject(GameObject* gameObject)
 {
-    if (gameObject->id_ == 0)
-    {
-        gameObject->owner_ = this;
-        gameObject->id_ = nextGameObjectId_;
-        nextGameObjectId_++;
+  if (gameObject->id_ == 0)
+  {
+    gameObject->owner_ = this;
+    gameObject->id_ = nextGameObjectId_;
+    nextGameObjectId_++;
 
-        gameObject->initialized();
+    gameObject->initialized();
 
-        gameObjectsOwned_[gameObject->id_] = gameObject;
+    gameObjectsOwned_[gameObject->id_] = gameObject;
 
-        return true;
-    }
+    return true;
+  }
 
-    // otherwise it's already used somewhere
-    return false;
+  // otherwise it's already used somewhere
+  return false;
 }
 
 bool Game::removeGameObject(GameObject* gameObject)
 {
-    if (gameObject->id_ != 0)
+  if (gameObject->id_ != 0)
+  {
+    // Remove the game object
+    if (gameObjectsOwned_.erase(gameObject->id_) == 1)
     {
-        // Remove the game object
-        if (gameObjectsOwned_.erase(gameObject->id_) == 1)
-        {
-            // Attemp to make
-            if (gameObject->id_ + 1 == nextGameObjectId_)
-                nextGameObjectId_--;
+      // Attemp to make
+      if (gameObject->id_ + 1 == nextGameObjectId_)
+        nextGameObjectId_--;
 
-            gameObject->owner_ = NULL;
-            gameObject->id_ = 0;
-            
-            return true;
-        }
+      gameObject->owner_ = NULL;
+      gameObject->id_ = 0;
+
+      return true;
     }
+  }
 
-    // otherwise it's already removed
-    return false;
+  // otherwise it's already removed
+  return false;
 }
 
 void Game::cleanup()
 {
-	spriteManager->cleanup();
+	spriteManager.cleanup();
 
 	// Quit SDL_ttf
 	TTF_Quit();

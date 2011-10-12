@@ -11,10 +11,8 @@
 // Engine
 #include "Sprite.h"
 
-SpriteManager::SpriteManager(SDL_Color colorKey)
+SpriteManager::SpriteManager()
 {
-	_colorKey = colorKey;
-
     spriteMap_ = SpriteMap();
     spriteMap_.clear();
 
