@@ -21,11 +21,16 @@ private:
 	// sub-iterator type
 	typedef decltype((*_it).begin()) SubIt_t;
 
+    
 	// sub-iterator dereference type
 	typedef decltype(*((*_it).begin())) Value_t;
 
 };
-
+/*
+#if __has_feature(cxx_decltype)
+#error has decltype
+#endif
+*/
 /* Iterator2D
  * Given an iterator, iterates on the values returned by the iterators
  * of the containers returned by the given iterator. Assumed that the

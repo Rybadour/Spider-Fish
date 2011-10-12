@@ -2,7 +2,11 @@
 #define SDL_GAME_ENGINE__SPRITE_MANAGER_H
 
 // SDL
+#ifdef __APPLE__
+#include <SDL/SDL.h>
+#else
 #include "SDL.h"
+#endif
 
 // C++
 #include <string>
