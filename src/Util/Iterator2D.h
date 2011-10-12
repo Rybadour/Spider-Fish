@@ -16,13 +16,13 @@ private:
 	static const It _it; // dummy to get type data
 	friend class Iterator2D<It>;
 	
-	static Iterator2D<It> SelfType;
+	typedef Iterator2D<It> Self_t;
 
 	// sub-iterator type
-	static decltype((*_it).begin()) SubIt;
+	typedef decltype((*_it).begin()) SubIt_t;
 
 	// sub-iterator dereference type
-	static decltype(*((*_it).begin())) Value;
+	typedef decltype(*((*_it).begin())) Value_t;
 
 };
 
@@ -35,8 +35,8 @@ private:
 template<typename It>
 class Iterator2D
   : public boost::iterator_facade<
-    decltype(Iterator2DTraits<It>::SelfType)
-  , decltype(Iterator2DTraits<It>::Value)
+    typename Iterator2DTraits<It>::Self_t
+  , typename Iterator2DTraits<It>::Value_t
   , boost::forward_traversal_tag
   >
 {
@@ -71,8 +71,8 @@ private:
 	It _it;
 	It _itEnd;
 
-	typename decltype(Iterator2DTraits<It>::SubIt) _subIt;
-	typename decltype(Iterator2DTraits<It>::SubIt) _subItEnd;
+	typename Iterator2DTraits<It>::SubIt_t _subIt;
+	typename Iterator2DTraits<It>::SubIt_t _subItEnd;
 
 	// setup the next sub-iterator. this method does
 	// nothing if the sub-iterator is not at its end.
@@ -106,7 +106,7 @@ private:
 	}
 
 	// returns the current value
-	decltype(Iterator2DTraits<It>::Value) &dereference() const {
+	typename Iterator2DTraits<It>::Value_t &dereference() const {
 		return *_subIt;
 	}
 
