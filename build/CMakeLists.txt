@@ -30,7 +30,7 @@ Find_Package (SDL_mixer REQUIRED)
 If (NOT SDLMIXER_FOUND)
   Message (FATAL_ERROR "Couldn't find SDL-mixer development files. On Debian-based systems (such as Ubuntu) you should install the 'libsdl-mixer1.2-dev' package.")
 Else (NOT SDLMIXER_FOUND)
-  Include_Directories (${SDLMIXER_INCLUDE_IR})
+  Include_Directories (${SDLMIXER_INCLUDE_DIR})
 EndIf (NOT SDLMIXER_FOUND)
 
 Find_Package (SDL_ttf REQUIRED)
