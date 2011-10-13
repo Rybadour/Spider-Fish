@@ -29,7 +29,7 @@ const int SCREEN_BPP = 32;
 class Game
 {
   public:
-	SpriteManager spriteManager;
+    SpriteManager spriteManager;
 
     Game(std::string title, int width, int height);
     bool start();

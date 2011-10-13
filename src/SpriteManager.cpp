@@ -22,13 +22,15 @@
 
 SpriteManager::SpriteManager()
 {
-    _spriteMap = SpriteMap();
-    _spriteMap.clear();
+  _spriteMap = SpriteMap();
+  _spriteMap.clear();
 
-    _imageMap = ImageMap();
-    _imageMap.clear();
+   _nextSpriteId = 0;
 
-    _nextSpriteId = 0;
+  _imageMap = ImageMap();
+  _imageMap.clear();
+
+  nextSpriteId_ = 0;
 }
 
 Sprite* SpriteManager::createSprite(std::string const &fileName)
