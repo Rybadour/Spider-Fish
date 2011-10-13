@@ -19,14 +19,10 @@
 // Engine
 #include "GameObject.h"
 
-
-//should be a const defined somewhere else
-SDL_Color colorKey = {0, 0xFF, 0xFF};
-
 Game::Game(std::string title, int width, int height)
   : _quit(false),
     _screen(NULL),
-    spriteManager(colorKey),
+    spriteManager(),
     nextGameObjectId_(0)
 {
 

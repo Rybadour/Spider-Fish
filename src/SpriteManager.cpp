@@ -19,7 +19,9 @@
 
 SpriteManager::SpriteManager()
 {
-  _colorKey = colorKey;
+	_colorKey.r = 0x00;
+	_colorKey.g = 0xFF;
+	_colorKey.b = 0xFF;
 
   spriteMap_ = SpriteMap();
   spriteMap_.clear();
