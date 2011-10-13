@@ -35,3 +35,7 @@ void Sprite::draw(SDL_Surface* screen)
 		SDL_BlitSurface(_image, NULL, screen, &offset);
 	}
 }
+
+Sprite::~Sprite()
+{
+}
