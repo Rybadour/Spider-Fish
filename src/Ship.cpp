@@ -15,15 +15,23 @@
 // Constant
 const float Ship::SPEED = 500; // pixels/sec
 
-Ship::Ship(Game *game)
-	:	GameObject(game),
-		sprite_(NULL), 
-		veloX_(0), 
-		veloY_(0), 
-		overflowX_(0), 
-		overflowY_(0)
+Ship::Ship()
+  : sprite_(NULL),
+    veloX_(0),
+    veloY_(0),
+    overflowX_(0),
+    overflowY_(0)
 {
+}
 
+Ship::Ship(Game* owner)
+  : GameObject(owner),
+    sprite_(NULL),
+    veloX_(0),
+    veloY_(0),
+    overflowX_(0),
+    overflowY_(0)
+{
 }
 
 void Ship::initialized()

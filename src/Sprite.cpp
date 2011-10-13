@@ -16,22 +16,23 @@
 
 Sprite::Sprite(uint id, SpriteManager* spriteManager, SDL_Surface* image)
 {
-    this->id_ = id;
-	this->spriteManager = spriteManager;
-	this->_image = image;
+  this->id_ = id;
+  this->spriteManager = spriteManager;
+  this->_image = image;
 
-	this->x = 0;
-	this->y = 0;
+  this->x = 0;
+  this->y = 0;
 }
 
 void Sprite::draw(SDL_Surface* screen)
 {
-	if (_image != NULL)
-	{
-		SDL_Rect offset;
-		offset.x = x;
-		offset.y = y;
+  if (_image != NULL)
+  {
 
-		SDL_BlitSurface(_image, NULL, screen, &offset);
-	}
+    SDL_Rect offset;
+    offset.x = x;
+    offset.y = y;
+
+    SDL_BlitSurface(_image, NULL, screen, &offset);
+  }
 }

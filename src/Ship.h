@@ -17,6 +17,7 @@ class Ship : public GameObject
     public:
         static const float SPEED;
 
+        Ship();
         Ship(Game*);
         void initialized();
 

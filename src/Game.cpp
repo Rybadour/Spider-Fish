@@ -2,7 +2,6 @@
 
 // C++
 #include <string>
-#include <time.h>
 
 // SDL
 #ifdef __APPLE__
@@ -20,42 +19,46 @@
 // Engine
 #include "GameObject.h"
 
-Game::Game(std::string title, int width, int height)
-{
-	_quit = false;
-	_screen = NULL;
 
-    nextGameObjectId_ = 0;
+//should be a const defined somewhere else
+SDL_Color colorKey = {0, 0xFF, 0xFF};
+
+Game::Game(std::string title, int width, int height)
+  : _quit(false),
+    _screen(NULL),
+    spriteManager(colorKey),
+    nextGameObjectId_(0)
+{
 
 	SDL_Color color = {0, 0xFF, 0xFF};
 	this->spriteManager._colorKey = color;
 
-	// Initialize SDL
-	// Note: SDL_INIT_EVERYTHING will also enable joystick, video and cdrom stuff
-    if ( SDL_Init(SDL_INIT_EVERYTHING) == -1 )
-		return;
+  // Initialize SDL
+  // Note: SDL_INIT_EVERYTHING will also enable joystick, video and cdrom stuff
+  if ( SDL_Init(SDL_INIT_EVERYTHING) == -1 )
+    return;
 
-	// Set up the Window and View Port
-	SDL_WM_SetCaption(title.c_str(), NULL); // window caption
-	// Note: the icon must be a bmp file because it must be called before SDL_SetVideoMode
-	//SDL_WM_SetIcon(SDL_LoadBMP("icon.bmp"), NULL); // window icon
+  // Set up the Window and View Port
+  SDL_WM_SetCaption(title.c_str(), NULL); // window caption
+  // Note: the icon must be a bmp file because it must be called before SDL_SetVideoMode
+  //SDL_WM_SetIcon(SDL_LoadBMP("icon.bmp"), NULL); // window icon
 
-	// Note: Use SDL_FULLSCREEN instead of SDL_SWSURFACE to run in fullscreen
-	_screen = SDL_SetVideoMode(width, height, SCREEN_BPP, SDL_SWSURFACE);
-	//SDL_putenv("SDL_VIDEO_CENTERED=center"); // center the window
-	//SDL_putenv("SDL_VIDEO_WINDOW_POS=x,y"); // position the window
+  // Note: Use SDL_FULLSCREEN instead of SDL_SWSURFACE to run in fullscreen
+  _screen = SDL_SetVideoMode(width, height, SCREEN_BPP, SDL_SWSURFACE);
+  //SDL_putenv("SDL_VIDEO_CENTERED=center"); // center the window
+  //SDL_putenv("SDL_VIDEO_WINDOW_POS=x,y"); // position the window
 
-	// Quit if screen couldn't be setup
-	if ( _screen == NULL )
-		return;
+  // Quit if screen couldn't be setup
+  if ( _screen == NULL )
+    return;
 
-	// Initialize SDL_ttf (true type fonts)
-	if ( TTF_Init() == -1 )
-		return;
+  // Initialize SDL_ttf (true type fonts)
+  if ( TTF_Init() == -1 )
+    return;
 
-	//Initialize SDL_mixer (audio)
-    if( Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1 )
-        return;
+  //Initialize SDL_mixer (audio)
+  if( Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1 )
+    return;
 }
 
 // Initialization and Game loop
@@ -97,7 +100,7 @@ bool Game::start()
     }
 
     // Drawing
-	SDL_FillRect(_screen, NULL, 0x00000000);
+	  SDL_FillRect(_screen, NULL, 0x00000000);
     spriteManager.draw(_screen);
 
     // Refresh screen
@@ -155,9 +158,9 @@ void Game::cleanup()
 {
 	spriteManager.cleanup();
 
-	// Quit SDL_ttf
-	TTF_Quit();
+  // Quit SDL_ttf
+  TTF_Quit();
 
-	// Quit
-	SDL_Quit();
+  // Quit
+  SDL_Quit();
 }

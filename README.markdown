@@ -15,7 +15,7 @@ Run the following commands:
 This will generate a build system appropriate for your environment in the
 `build` directory. Built binaries will be located in `build/bin`.
 
-Running the game
+Running the game Windows
 =======
 
 1. Build the game.
@@ -25,11 +25,34 @@ Running the game
 	Visual Studios copy the images into the project directory.
 4. Run the `spifi_game` executable in `build/bin`.
 
+Linux
+=======
+
+Prerequisites
+-------
+1. libsdl1.2
+2. libsdl1.2-dev
+3. libsdl-ttf2.0
+4. libsdl-ttf2.0-dev
+5. libsdl-image1.2
+6. libsdl-image1.2-dev
+7. libsdl-mixer1.2
+8. libsdl-mixer1.2-dev
+9. cmake
+10. make
+11. gcc
+
+Build/Run
+-------
+1. cd build
+2. cmake .
+3. make
+4. cd ..
+5. ./spifi
+
 Directory structure
 =======
 
 * /build - build system and built binaries
-* /include - third-party header files
-* /lib - prebuilt third-party libraries
 * /src - cpp source files
 * /resources - images, audio files, etc
