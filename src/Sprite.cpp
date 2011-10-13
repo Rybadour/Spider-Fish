@@ -16,7 +16,7 @@
 
 Sprite::Sprite(uint id, SpriteManager* spriteManager, SDL_Surface* image)
 {
-    this->id_ = id;
+    this->_id = id;
 	this->spriteManager = spriteManager;
 	this->_image = image;
 

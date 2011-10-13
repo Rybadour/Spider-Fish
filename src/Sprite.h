@@ -21,11 +21,16 @@ public:
 	int x;
 	int y;
 
+private:
+
 	Sprite(uint id, SpriteManager* spriteManager, SDL_Surface* image);
 	void draw(SDL_Surface* screen);
 
-private:
-    uint id_;
+	// hide the destructor. only the SpriteManager should be able
+	// to free sprites from memory.
+	~Sprite();
+
+    uint _id;
 	SDL_Surface* _image;
 };
 
