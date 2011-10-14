@@ -56,3 +56,18 @@ Directory structure
 * /build - build system and built binaries
 * /src - cpp source files
 * /resources - images, audio files, etc
+
+Building Test Suite
+========
+
+Requirements:
+
+* Google Test ( [[http://code.google.com/p/googletest/]] )
+
+Visual Studio
+-------
+
+Set: `spifi_test -> properties -> linker -> input -> ignore specific default libraries`
+To: `msvcprt.lib;MSVCPRT.lib;MSVCRT.lib`
+
+Make sure the `spifi_test` project builds for Release, not Debug, as the additional Debug libraries will conflict.
