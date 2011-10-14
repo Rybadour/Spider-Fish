@@ -44,15 +44,14 @@ Prerequisites
 
 Build/Run
 -------
+1. mkdir build
 1. cd build
-2. cmake .
-3. make
-4. cd ..
-5. ./spifi
+1. cmake ..
+1. make
+1. ./spifi
 
 Directory structure
 =======
 
-* /build - build system and built binaries
 * /src - cpp source files
 * /resources - images, audio files, etc
