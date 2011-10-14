@@ -1,0 +1,9 @@
+#ifndef SPIDERFISH_H
+#define SPIDERFISH_H
+
+#define RESOURCE_DIR ${RESOURCE_DIR}
+#define img_resource(P) RESOURCE_DIR"images/"P
+typedef unsigned int uint;
+
+#endif /*SPIDERFISH_H*/
+

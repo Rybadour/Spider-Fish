@@ -1,24 +1,20 @@
-#include "SpriteManager.h"
-
-// SDL
-#ifdef __APPLE__
-#include <SDL/SDL.h>
-#include <SDL_image/SDL_image.h>
-#else
-#include "SDL.h"
-#include "SDL_image.h"
-#endif
-
 // C++
 #include <string>
 #include <map>
 #include <iostream>
 
+// SDL
+#include "SDL.h"
+#include "SDL_image.h"
+
+
 // Engine
+#include "SpiderFish.h"
+#include "SpriteManager.h"
 #include "Sprite.h"
 
-SpriteManager::SpriteManager(SDL_Color colorKey)
-	:_colorKey(colorKey), nextSpriteId_(0)
+  SpriteManager::SpriteManager(SDL_Color colorKey)
+:_colorKey(colorKey), nextSpriteId_(0)
 {
 }
 
@@ -51,7 +47,7 @@ Sprite* SpriteManager::createSprite(std::string fileName)
 
   Sprite* newSprite = new Sprite(nextSpriteId_, this, image);
   nextSpriteId_++;
-  spriteMap_[newSprite->id_] = newSprite;
+  spriteMap_[newSprite->_id] = newSprite;
   return newSprite;
 }
 

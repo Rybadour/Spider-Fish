@@ -12,7 +12,7 @@ class Iterator2D;
  */
 template<typename It>
 class Iterator2DTraits {
-private:
+public:
 	static const It _it; // dummy to get type data
 	friend class Iterator2D<It>;
 	

@@ -7,18 +7,12 @@
 #include <iostream>
 
 // SDL
-#ifdef __APPLE__
-#include <SDL/SDL.h>
-#else
 #include "SDL.h"
-#endif
 
 // Engine
-#include "Types.h"
+#include "SpiderFish.h"
 #include "SpriteManager.h"
-// #include "GameObject.h"
 
-#define img_resource(P) "resources/images/"P
 
 class GameObject;
 
