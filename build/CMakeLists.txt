@@ -35,14 +35,10 @@ Function (CHECK_MODULE_INSTALL MODULE_NAME)
   EndIf (NOT EXISTS "${CMAKE_MODULES}/${MODULE_NAME}.cmake")
 EndFunction (CHECK_MODULE_INSTALL)
 
-INSTALL_MODULE ("FindPackageHandleStandardArgs")
-CHECK_MODULE_INSTALL ("FindPackageHandleStandardArgs")
+# do the module installation and checks
 
-INSTALL_MODULE ("GTest")
-CHECK_MODULE_INSTALL ("GTest")
-
-
-Message (FATAL_ERROR "hahaha")
+INSTALL_MODULE ("FindGTest")
+CHECK_MODULE_INSTALL ("FindGTest")
 
 # +---------------+
 # | CMake options |
@@ -123,14 +119,10 @@ Target_Link_Libraries (
 # | spifi_test binary  |
 # +--------------------+
 
-Include (FindGTest)
-
-set (SPIFI_TEST_GO OFF)
-
-Find_Package(GTest REQUIRED)
+Find_Package(GTest)
 If (NOT GTEST_FOUND)
   Message (WARNING "Couldn't find GTest.")
-  Message (WARNING "Skipping generation of spifi_tests binary.")
+  Message (WARNING "Skipping generation of spifi_test binary.")
 Else (NOT GTEST_FOUND)
   Include_Directories(${GTEST_INCLUDE_DIRS})
   set (SPIFI_TEST_GO ON)
@@ -138,8 +130,10 @@ EndIF (NOT GTEST_FOUND)
 
 If (SPIFI_TEST_GO)
   FILE(GLOB_RECURSE SPIFI_TEST_SOURCES ../test/*.*)
-  Add_Executable(spifi_test ${SPIFI_TEST_SOURCES})
-  target_link_libraries(spifi_test ${GTEST_BOTH_LIBRARIES})
+  IF (SPIFI_TEST_SOURCES)
+    Add_Executable(spifi_test ${SPIFI_TEST_SOURCES})
+    target_link_libraries(spifi_test ${GTEST_LIBRARIES})
+  EndIf (SPIFI_TEST_SOURCES)
 EndIf (SPIFI_TEST_GO)
 
 
