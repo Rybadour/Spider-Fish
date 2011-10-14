@@ -24,7 +24,7 @@ class SpriteManager
 public:
 	SDL_Color _colorKey;
 
-	SpriteManager();
+	SpriteManager(SDL_Color colorKey);
     void draw(SDL_Surface* screen);
 
 	Sprite* createSprite(std::string fileName);

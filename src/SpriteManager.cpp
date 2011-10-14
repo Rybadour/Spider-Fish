@@ -17,17 +17,9 @@
 // Engine
 #include "Sprite.h"
 
-SpriteManager::SpriteManager()
+SpriteManager::SpriteManager(SDL_Color colorKey)
+	:_colorKey(colorKey), nextSpriteId_(0)
 {
-  _colorKey = colorKey;
-
-  spriteMap_ = SpriteMap();
-  spriteMap_.clear();
-
-  _imageMap = ImageMap();
-  _imageMap.clear();
-
-  nextSpriteId_ = 0;
 }
 
 Sprite* SpriteManager::createSprite(std::string fileName)
