@@ -20,8 +20,8 @@
 #include "GameObject.h"
 
 
-//should be a const defined somewhere else
-SDL_Color colorKey = {0, 0xFF, 0xFF};
+//should be a const defined somewhere else 
+SDL_Color colorKey = {0xFF, 0, 0xFF};
 
 Game::Game(std::string title, int width, int height)
   : _quit(false),
@@ -29,9 +29,6 @@ Game::Game(std::string title, int width, int height)
     spriteManager(colorKey),
     nextGameObjectId_(0)
 {
-
-	SDL_Color color = {0, 0xFF, 0xFF};
-	this->spriteManager._colorKey = color;
 
   // Initialize SDL
   // Note: SDL_INIT_EVERYTHING will also enable joystick, video and cdrom stuff
@@ -100,7 +97,7 @@ bool Game::start()
     }
 
     // Drawing
-	  SDL_FillRect(_screen, NULL, 0x00000000);
+	  SDL_FillRect(_screen, NULL, 0x000000);
     spriteManager.draw(_screen);
 
     // Refresh screen

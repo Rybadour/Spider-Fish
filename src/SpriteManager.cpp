@@ -31,11 +31,11 @@ Sprite* SpriteManager::createSprite(std::string fileName)
     SDL_Surface* loadedImage = IMG_Load(fileName.c_str());
     if (loadedImage != NULL)
     {
-      image = SDL_DisplayFormat(loadedImage);
+      image = SDL_DisplayFormatAlpha(loadedImage);
       SDL_FreeSurface(loadedImage);
 
       // Map the color key
-      Uint32 colorKey = SDL_MapRGB(image->format, _colorKey.r, _colorKey.g, _colorKey.b);
+      Uint32 colorKey = SDL_MapRGBA(image->format, _colorKey.r, _colorKey.g, _colorKey.b, 0);
       SDL_SetColorKey(image, SDL_SRCCOLORKEY, colorKey);
 
       _imageMap[fileName] = image;
