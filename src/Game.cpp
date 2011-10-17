@@ -12,44 +12,49 @@
 #include "Game.h"
 #include "GameObject.h"
 
-//should be a const defined somewhere else
-SDL_Color colorKey = {0, 0xFF, 0xFF};
-
-  Game::Game(std::string title, int width, int height)
-: _quit(false),
-  spriteManager(colorKey),
-  nextGameObjectId_(0)
+Game::Game( std::string title, int width, int height ):
+  imageManager(),
+  width( width ),
+  height( height ),
+  _quit( false ),
+  _nextGameObjectId( 0 )
 {
-
-  SDL_Color color = {0, 0xFF, 0xFF};
-  this->spriteManager._colorKey = color;
-
   // Initialize SDL
   // Note: SDL_INIT_EVERYTHING will also enable joystick, video and cdrom stuff
-  if ( SDL_Init(SDL_INIT_EVERYTHING) == -1 )
+  if( SDL_Init( SDL_INIT_EVERYTHING ) == -1 )
     return;
 
   // Set up the Window and View Port
-  SDL_WM_SetCaption(title.c_str(), NULL); // window caption
+  SDL_WM_SetCaption( title.c_str(), NULL ); // window caption
   // Note: the icon must be a bmp file because it must be called before SDL_SetVideoMode
   //SDL_WM_SetIcon(SDL_LoadBMP("icon.bmp"), NULL); // window icon
 
   // Note: Use SDL_FULLSCREEN instead of SDL_SWSURFACE to run in fullscreen
-  _screen = SDL_SetVideoMode(width, height, SCREEN_BPP, SDL_SWSURFACE);
+  _screen = SDL_SetVideoMode( width, height, SCREEN_BPP, SDL_DOUBLEBUF | SDL_HWSURFACE );
   //SDL_putenv("SDL_VIDEO_CENTERED=center"); // center the window
   //SDL_putenv("SDL_VIDEO_WINDOW_POS=x,y"); // position the window
 
   // Quit if screen couldn't be setup
-  if ( _screen == NULL )
+  if( _screen == NULL )
     return;
 
   // Initialize SDL_ttf (true type fonts)
-  if ( TTF_Init() == -1 )
+  if( TTF_Init() == -1 )
     return;
 
   //Initialize SDL_mixer (audio)
-  if( Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1 )
+  if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 )
     return;
+}
+
+Game::~Game()
+{
+  GameObjectMap::iterator it = _gameObjects.begin();
+  GameObjectMap::iterator ie = _gameObjects.end();
+  for( ; it != ie; ++it )
+  {
+    delete it->second;
+  }
 }
 
 // Initialization and Game loop
@@ -58,63 +63,95 @@ bool Game::start()
   // Game loop
   Uint32 lastTimeStep = SDL_GetTicks();
   Uint32 msTimeStep = 0;
-  int eventCount = 0;
-  while (!_quit)
+  Uint32 msTime;
+  SDL_Event event;
+  while( !_quit )
   {
-    msTimeStep = SDL_GetTicks() - lastTimeStep;
-    lastTimeStep = SDL_GetTicks();
-
-    // Tell the game objects to update
-    GameObjectMap::const_iterator end = gameObjectsOwned_.end();
-    for (GameObjectMap::const_iterator it = gameObjectsOwned_.begin(); it != end; ++it)
-    {
-      it->second->update(msTimeStep); // TODO: Eventually pass a timestep value here?
-    }
-
-    // Iterate over all the events this step and tell the game objects about them
-    while ( SDL_PollEvent(&_eventManager) )
-    {
-      handleEvent(&_eventManager);
-
-      GameObjectMap::const_iterator end = gameObjectsOwned_.end();
-      for (GameObjectMap::const_iterator it = gameObjectsOwned_.begin(); it != end; ++it)
-      {
-        it->second->handleEvent(&_eventManager);
-      }
-
-      // If the user wants to close the game
-      if (_eventManager.type == SDL_QUIT)
-      {
-        // QUIT
-        _quit = true;
-      }
-    }
-
-    // Drawing
-    SDL_FillRect(_screen, NULL, 0x00000000);
-    spriteManager.draw(_screen);
-
-    // Refresh screen
-    if(SDL_Flip(_screen) == -1)
-      _quit = true;
+    msTime = SDL_GetTicks();
+    msTimeStep = msTime - lastTimeStep;
+    lastTimeStep = msTime;
+    while( SDL_PollEvent( &event ) )
+      handleEvent( &event );
+    update( msTimeStep );
+    render();
   }
-
   cleanup();
-
   return true;
 }
 
-bool Game::addGameObject(GameObject* gameObject)
+void Game::handleEvent( SDL_Event* event )
 {
-  if (gameObject->id_ == 0)
+  switch( event->type )
   {
-    gameObject->owner_ = this;
-    gameObject->id_ = nextGameObjectId_;
-    nextGameObjectId_++;
+    case SDL_QUIT:
+      _quit = true;
+      break;
+    default: break;
+  }
+  GameObjectMap::const_iterator ie = _gameObjects.end();
+  GameObjectMap::const_iterator it = _gameObjects.begin();
+  for( ; it != ie; ++it )
+  {
+    it->second->handleEvent( event );
+  }
+}
+//call the draw method for each game object
+//aswell as clear and flip the screen
+void Game::render()
+{
+  SDL_FillRect( _screen, NULL, 0 );
+  GameObjectMap::const_iterator ie = _gameObjects.end();
+  GameObjectMap::const_iterator it = _gameObjects.begin();
+  for( ; it != ie; ++it )
+  {
+    it->second->draw( _screen );
+  }
+  if( SDL_Flip( _screen ) == -1 )
+    _quit = true;
+}
 
-    gameObject->initialized();
+//update all game objects
+void Game::update( Uint32 msTimeStep )
+{
+  GameObjectMap::const_iterator it = _gameObjects.begin();
+  while( it != _gameObjects.end() )
+  {
+    if( !it->second->_alive )
+    {
+      removeGameObject(( it++ )->second );
+    }
+    else
+    {
+      ++it;
+    }
+  }
+  it = _gameObjects.begin();
+  for( ; it != _gameObjects.end(); ++it )
+  {
+    it->second->update( msTimeStep );
+  }
+}
 
-    gameObjectsOwned_[gameObject->id_] = gameObject;
+void Game::cleanup()
+{
+  // Quit SDL_ttf
+  TTF_Quit();
+
+  // Quit
+  SDL_Quit();
+}
+
+bool Game::addGameObject( GameObject* gameObject )
+{
+  if( gameObject->_id == 0 )
+  {
+    gameObject->_owner = this;
+    gameObject->_id = _nextGameObjectId;
+    _nextGameObjectId++;
+
+    gameObject->initialize();
+
+    _gameObjects[gameObject->_id] = gameObject;
 
     return true;
   }
@@ -123,35 +160,20 @@ bool Game::addGameObject(GameObject* gameObject)
   return false;
 }
 
-bool Game::removeGameObject(GameObject* gameObject)
+bool Game::removeGameObject( GameObject* gameObject )
 {
-  if (gameObject->id_ != 0)
+  if( gameObject->_id != 0 )
   {
     // Remove the game object
-    if (gameObjectsOwned_.erase(gameObject->id_) == 1)
+    if( _gameObjects.erase( gameObject->_id ) == 1 )
     {
-      // Attemp to make
-      if (gameObject->id_ + 1 == nextGameObjectId_)
-        nextGameObjectId_--;
-
-      gameObject->owner_ = NULL;
-      gameObject->id_ = 0;
-
+      if( gameObject->_id + 1 == _nextGameObjectId )
+        --_nextGameObjectId;
+      delete gameObject;
       return true;
     }
   }
-
   // otherwise it's already removed
   return false;
 }
 
-void Game::cleanup()
-{
-  spriteManager.cleanup();
-
-  // Quit SDL_ttf
-  TTF_Quit();
-
-  // Quit
-  SDL_Quit();
-}

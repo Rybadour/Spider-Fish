@@ -11,8 +11,7 @@
 
 // Engine
 #include "SpiderFish.h"
-#include "SpriteManager.h"
-
+#include "ImageManager.h"
 
 class GameObject;
 
@@ -23,27 +22,29 @@ const int SCREEN_BPP = 32;
 class Game
 {
   public:
-    SpriteManager spriteManager;
+    ImageManager imageManager;
 
     Game(std::string title, int width, int height);
+    virtual ~Game();
     bool start();
 
     bool addGameObject(GameObject* gameObject);
     bool removeGameObject(GameObject* gameObject);
 
-  protected:
-    virtual void handleEvent(SDL_Event* event) = 0;
+    int width;
+    int height;
 
+  protected:
+    virtual void handleEvent(SDL_Event* event);
     bool _quit;
+    SDL_Surface*	_screen;
 
   private:
-    SDL_Surface*	_screen;
-    SDL_Event		_eventManager;
+    GameObjectMap _gameObjects;
+    uint _nextGameObjectId;
 
-    GameObjectMap gameObjectsOwned_;
-    uint nextGameObjectId_;
-
-    bool initialize(std::string title, int width, int height);
+    void update(Uint32);
+    void render();
     void cleanup();
 };
 

@@ -12,26 +12,17 @@
 
 class Sprite; // Forward declaration, acts like including the header
 
-typedef std::map<uint, Sprite*> SpriteMap;
 typedef std::map<std::string, SDL_Surface*> ImageMap;
 
-class SpriteManager
+class ImageManager
 {
   public:
-    SDL_Color _colorKey;
-
-    SpriteManager(SDL_Color colorKey);
-    void draw(SDL_Surface* screen);
-
-    Sprite* createSprite(std::string fileName);
-
-    void cleanup();
+    ImageManager();
+    virtual ~ImageManager();
+    SDL_Surface* createImage(std::string fileName);
 
   private:
-    SpriteMap spriteMap_;
     ImageMap _imageMap;
-
-    uint nextSpriteId_;
 };
 
 #endif

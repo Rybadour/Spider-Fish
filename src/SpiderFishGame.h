@@ -14,7 +14,7 @@ class SpiderFishGame : public Game
     SpiderFishGame();
 
   protected:
-    void handleEvent(SDL_Event* event);
+    virtual void handleEvent(SDL_Event*);
 };
 
 #endif // SPIDERFISHGAME_H
