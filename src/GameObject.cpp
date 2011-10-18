@@ -1,7 +1,8 @@
 // GAME
+#include "GameObject.h"
 #include "SpiderFish.h"
 #include "Game.h"
-#include "GameObject.h"
+
 
 GameObject::GameObject() :
   _id(0),

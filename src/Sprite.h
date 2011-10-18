@@ -12,13 +12,8 @@ class SpriteManager; // Forward declaration, acts like including the header
 class Sprite
 {
   public:
-    int x;
-    int y;
-    int w;
-    int h;
-
-    Sprite(SDL_Surface* image);
-    void draw(SDL_Surface* screen);
+    Sprite( SDL_Surface* image );
+    void draw( SDL_Surface* screen, int x, int y );
 
   private:
     SDL_Surface* _image;

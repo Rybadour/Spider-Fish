@@ -7,10 +7,10 @@
 #include "SDL.h"
 #include "SDL_image.h"
 
-
 // Engine
-#include "SpiderFish.h"
 #include "ImageManager.h"
+#include "SpiderFish.h"
+
 
 ImageManager::ImageManager()
 {

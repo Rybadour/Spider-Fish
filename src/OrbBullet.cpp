@@ -1,4 +1,6 @@
 #include "OrbBullet.h"
+#include "Bullet.h"
+#include "SpiderFish.h"
 #include "Game.h"
 
 OrbBullet::OrbBullet(Game* owner,int x,int y):

@@ -1,6 +1,6 @@
 #include "Weapon.h"
 
-Weapon::Weapon( Game* owner, GameObject* body ):
+Weapon::Weapon( Game* owner, Ship* body ):
   GameObject( owner ),
   _body( body ),
   _lastShot( 0 ),

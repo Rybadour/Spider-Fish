@@ -8,8 +8,8 @@
 #include "SDL_image.h"
 
 // Game
-#include "SpiderFish.h"
 #include "Game.h"
+#include "SpiderFish.h"
 #include "GameObject.h"
 
 Game::Game( std::string title, int width, int height ):
@@ -30,7 +30,7 @@ Game::Game( std::string title, int width, int height ):
   //SDL_WM_SetIcon(SDL_LoadBMP("icon.bmp"), NULL); // window icon
 
   // Note: Use SDL_FULLSCREEN instead of SDL_SWSURFACE to run in fullscreen
-  _screen = SDL_SetVideoMode( width, height, SCREEN_BPP, SDL_DOUBLEBUF | SDL_HWSURFACE );
+  _screen = SDL_SetVideoMode( width, height, SCREEN_BPP, SDL_SWSURFACE );
   //SDL_putenv("SDL_VIDEO_CENTERED=center"); // center the window
   //SDL_putenv("SDL_VIDEO_WINDOW_POS=x,y"); // position the window
 
@@ -148,9 +148,6 @@ bool Game::addGameObject( GameObject* gameObject )
     gameObject->_owner = this;
     gameObject->_id = _nextGameObjectId;
     _nextGameObjectId++;
-
-    gameObject->initialize();
-
     _gameObjects[gameObject->_id] = gameObject;
 
     return true;

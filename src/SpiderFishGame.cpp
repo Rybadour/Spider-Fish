@@ -1,12 +1,12 @@
 #include "SpiderFish.h"
 #include "SpiderFishGame.h"
-#include "Ship.h"
+#include "PlayerShip.h"
 #include "Game.h"
 
 SpiderFishGame::SpiderFishGame() :
   Game( "Spider-Fish", 600, 420 )
 {
-  this->addGameObject(new Ship(this,0xFFFFFFFF ));
+  this->addGameObject( new PlayerShip( this, 200, 200 ) );
 }
 
 void SpiderFishGame::handleEvent( SDL_Event* event )

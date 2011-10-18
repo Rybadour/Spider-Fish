@@ -13,7 +13,7 @@
 
 // Constant
 
-SingleShooter::SingleShooter( Game* owner, GameObject* body ) :
+SingleShooter::SingleShooter( Game* owner, Ship* body ) :
   Weapon( owner, body )
 {
   _firingSpeed = 200;
@@ -75,5 +75,5 @@ void SingleShooter::draw( SDL_Surface* screen )
 void SingleShooter::fire()
 {
   //_owner->addGameObject( new OrbBullet( _body->getX(), _body->getY() ) );
-  _owner->addGameObject( new OrbBullet(_owner, 200, 200 ) );
+  _owner->addGameObject( new OrbBullet(_owner, _body->getX(), _body->getY() ) );
 }

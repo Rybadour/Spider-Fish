@@ -2,12 +2,13 @@
 #define WEAPON_H
 
 #include "GameObject.h"
-
+#include "Ship.h"
+class Ship;
 
 class Weapon : public GameObject
 {
   public:
-    Weapon( Game* owner, GameObject* body );
+    Weapon( Game* owner, Ship* body );
     virtual ~Weapon();
     virtual void initialize() = 0;
     virtual void handleEvent( SDL_Event* event ) = 0;
@@ -15,7 +16,7 @@ class Weapon : public GameObject
     virtual void draw( SDL_Surface* screen ) = 0;
     virtual void fire() = 0;
   protected:
-    GameObject* _body;
+    Ship* _body;
     int _lastShot;
     int _firingSpeed;
     bool _triggerPulled;
