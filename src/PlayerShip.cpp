@@ -8,7 +8,7 @@
 #include "SpiderFish.h"
 #include "SingleShooter.h"
 
-const float PlayerShip::SPEED = 500; // pixels/sec
+const float PlayerShip::SPEED = 200; // pixels/sec
 
 PlayerShip::PlayerShip( Game* owner, int x, int y ):
   Ship( owner,
@@ -23,6 +23,7 @@ PlayerShip::PlayerShip( Game* owner, int x, int y ):
 
 PlayerShip::~PlayerShip()
 {
+  _weapon = NULL;
   std::list<Weapon*>::iterator it = _weaponList.begin();
   std::list<Weapon*>::iterator ie = _weaponList.end();
   for( ; it != ie; ++it )

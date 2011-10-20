@@ -6,9 +6,6 @@ if(CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_CXX_FLAGS "--std=c++0x")
 endif()
 
-find_package (Boost REQUIRED)
-include_directories (${Boost_INCLUDE_DIR})
-
 find_package (SDL REQUIRED)
 include_directories (${SDL_INCLUDE_DIR})
 
@@ -28,36 +25,41 @@ set (
   SPIFI_SOURCES
 src/SpiderFishGame.h
 src/Game.cpp
-src/Util/ObjectPool.cpp
-src/Util/Iterator2D.cpp
-src/Util/Iterator2D.h
-src/Util/any_iterator.hpp
-src/Util/FauxContainer.h
-src/Util/FauxContainer.cpp
-src/Util/detail/any_iterator_metafunctions.hpp
-src/Util/detail/any_iterator_abstract_base.hpp
-src/Util/detail/any_iterator_wrapper.hpp
-src/Util/ObjectPool.h
 src/ImageManager.cpp
+src/PlayerShip.cpp
+src/CollisionManager.cpp
+src/ShipHalo.cpp
+src/Bullet.h
 src/Sprite.h
 src/Sprite.cpp
-src/SpiderFish.h
-src/Collision/CollisionSpace.cpp
-src/Collision/PhysicalEntity.h
-src/Collision/PhysicalEntity.cpp
-src/Collision/BruteForceSpace.h
-src/Collision/CollisionManger.cpp
-src/Collision/BruteForceSpace.cpp
-src/Collision/CollisionManager.h
-src/Collision/CollisionSpace.h
+src/PhysicalEntity.h
+src/PhysicalEntity.cpp
+src/SingleShooter.cpp
 src/Game.h
+src/EnemyData.h
 src/GameObject.cpp
+src/Weapon.cpp
+src/EnemyData.cpp
 src/GameObject.h
+src/OrbBullet.h
 src/SpiderFishGame.cpp
+src/SingleShooter.h
 src/ImageManager.h
+src/PlayerShip.h
+src/Bullet.cpp
+src/OrbBullet.cpp
+src/EnemyPeeShooter.h
 src/Ship.h
+src/EnemyPeeShooter.cpp
+src/SpiderFish.h.in
 src/main.cpp
+src/Weapon.h
+src/EnemyShip.h
+src/CollisionManager.h
+src/tags
+src/EnemyShip.cpp
 src/Ship.cpp
+src/ShipHalo.h
   )
 
 add_executable (spifi ${SPIFI_SOURCES})
@@ -67,6 +69,5 @@ target_link_libraries (
   ${SDLMIXER_LIBRARY}
   ${SDLTTF_LIBRARY} 
   ${SDLIMAGE_LIBRARY}
-  ${BOOST_LIBRARIES}
 )
 

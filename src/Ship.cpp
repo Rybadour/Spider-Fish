@@ -23,6 +23,10 @@ Ship::Ship( Game* owner , SDL_Surface* img, int x, int y ) :
 
 Ship::~Ship()
 {
+  if ( _weapon != NULL)
+  {
+    delete _weapon;
+  }
 }
 
 void Ship::draw( SDL_Surface * surface )

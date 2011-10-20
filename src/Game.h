@@ -24,18 +24,21 @@ class Game
   public:
     ImageManager imageManager;
 
-    Game(std::string title, int width, int height);
+    Game( std::string title, int width, int height );
     virtual ~Game();
     bool start();
 
-    bool addGameObject(GameObject* gameObject);
-    bool removeGameObject(GameObject* gameObject);
+    bool addGameObject( GameObject* gameObject );
+    bool removeGameObject( GameObject* gameObject );
+    virtual void handleEvent( SDL_Event* event );
+    virtual void update( Uint32 );
+    virtual void render();
+    virtual void cleanup();
 
     int width;
     int height;
 
   protected:
-    virtual void handleEvent(SDL_Event* event);
     bool _quit;
     SDL_Surface*	_screen;
 
@@ -43,9 +46,7 @@ class Game
     GameObjectMap _gameObjects;
     uint _nextGameObjectId;
 
-    void update(Uint32);
-    void render();
-    void cleanup();
+
 };
 
 #endif

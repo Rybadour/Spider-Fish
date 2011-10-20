@@ -16,7 +16,6 @@ class SingleShooter : public Weapon
   public:
     SingleShooter( Game*owner, Ship* body );
     virtual ~SingleShooter();
-    virtual void initialize();
     virtual void handleEvent( SDL_Event* event );
     virtual void update( int msTimeStep );
     virtual void draw( SDL_Surface* screen );

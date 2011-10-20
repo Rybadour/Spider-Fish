@@ -23,11 +23,6 @@ SingleShooter::~SingleShooter()
 {
 }
 
-
-void SingleShooter::initialize()
-{
-}
-
 void SingleShooter::handleEvent( SDL_Event* event )
 {
   switch( event->type )
@@ -59,11 +54,11 @@ void SingleShooter::update( int msTimeStep )
   _lastShot += msTimeStep;
   if( _triggerPulled )
   {
-    if(  _firingSpeed < _lastShot )
+    if( _firingSpeed < _lastShot )
     {
       fire();
 
-      _lastShot = _lastShot%_firingSpeed;
+      _lastShot = _lastShot % _firingSpeed;
     }
   }
 }
@@ -75,5 +70,5 @@ void SingleShooter::draw( SDL_Surface* screen )
 void SingleShooter::fire()
 {
   //_owner->addGameObject( new OrbBullet( _body->getX(), _body->getY() ) );
-  _owner->addGameObject( new OrbBullet(_owner, _body->getX(), _body->getY() ) );
+  _owner->addGameObject( new OrbBullet( _owner, _body->getX(), _body->getY() ) );
 }

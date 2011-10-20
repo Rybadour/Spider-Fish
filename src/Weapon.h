@@ -10,7 +10,6 @@ class Weapon : public GameObject
   public:
     Weapon( Game* owner, Ship* body );
     virtual ~Weapon();
-    virtual void initialize() = 0;
     virtual void handleEvent( SDL_Event* event ) = 0;
     virtual void update( int msTimeStep ) = 0;
     virtual void draw( SDL_Surface* screen ) = 0;
