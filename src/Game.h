@@ -7,18 +7,11 @@
 #include <iostream>
 
 // SDL
-#ifdef __APPLE__
-#include <SDL/SDL.h>
-#else
 #include "SDL.h"
-#endif
 
 // Engine
-#include "Types.h"
-#include "SpriteManager.h"
-// #include "GameObject.h"
-
-#define img_resource(P) "resources/images/"P
+#include "SpiderFish.h"
+#include "ImageManager.h"
 
 class GameObject;
 
@@ -29,28 +22,31 @@ const int SCREEN_BPP = 32;
 class Game
 {
   public:
-    SpriteManager spriteManager;
+    ImageManager imageManager;
 
-    Game(std::string title, int width, int height);
+    Game( std::string title, int width, int height );
+    virtual ~Game();
     bool start();
 
-    bool addGameObject(GameObject* gameObject);
-    bool removeGameObject(GameObject* gameObject);
+    bool addGameObject( GameObject* gameObject );
+    bool removeGameObject( GameObject* gameObject );
+    virtual void handleEvent( SDL_Event* event );
+    virtual void update( Uint32 );
+    virtual void render();
+    virtual void cleanup();
+
+    int width;
+    int height;
 
   protected:
-    virtual void handleEvent(SDL_Event* event) = 0;
-
     bool _quit;
+    SDL_Surface*	_screen;
 
   private:
-    SDL_Surface*	_screen;
-    SDL_Event		_eventManager;
+    GameObjectMap _gameObjects;
+    uint _nextGameObjectId;
 
-    GameObjectMap gameObjectsOwned_;
-    uint nextGameObjectId_;
 
-    bool initialize(std::string title, int width, int height);
-    void cleanup();
 };
 
 #endif

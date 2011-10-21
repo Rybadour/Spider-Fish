@@ -1,37 +1,32 @@
 #ifndef SHIP_H
 #define SHIP_H
 
+#include <list>
+
 // SDL
-#ifdef __APPLE__
-#include <SDL/SDL.h>
-#else
 #include "SDL.h"
-#endif
 
 // Engine
-#include "GameObject.h"
-#include "Sprite.h"
+#include "Game.h"
+#include "SpiderFish.h"
+#include "PhysicalEntity.h"
+#include "Weapon.h"
 
-class Ship : public GameObject
+class Weapon;
+
+class Ship : public PhysicalEntity
 {
-    public:
-        static const float SPEED;
+  public:
 
-        Ship();
-        Ship(Game*);
-        void initialized();
+    Ship( Game* owner , SDL_Surface* img, int x, int y );
+    virtual ~Ship();
+    virtual void draw( SDL_Surface* );
+    virtual void handleEvent( SDL_Event* event );
+    virtual void update( int msTimeStep );
 
-        void handleEvent(SDL_Event* event);
-        void update(int msTimeStep);
-
-    private:
-        Sprite* sprite_;
-
-        float veloX_; // pixels/sec
-        float veloY_; // pixels/sec
-
-        float overflowX_;
-        float overflowY_;
+  protected:
+    Weapon* _weapon;
+  private:
 };
 
 #endif // SHIP_H

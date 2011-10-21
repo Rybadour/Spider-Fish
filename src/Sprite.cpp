@@ -1,38 +1,26 @@
-#include "Sprite.h"
-
 // SDL
-#ifdef __APPLE__
-#include <SDL/SDL.h>
-#include <SDL_image/SDL_image.h>
-#else
 #include "SDL.h"
 #include "SDL_image.h"
-#endif
 
-// C++
+// Game
+#include "SpiderFish.h"
+#include "Sprite.h"
 
-// Engine
 
-
-Sprite::Sprite(uint id, SpriteManager* spriteManager, SDL_Surface* image)
+Sprite::Sprite( SDL_Surface* image ):
+  _image( image )
 {
-  this->id_ = id;
-  this->spriteManager = spriteManager;
-  this->_image = image;
-
-  this->x = 0;
-  this->y = 0;
 }
 
-void Sprite::draw(SDL_Surface* screen)
+void Sprite::draw( SDL_Surface* screen, int x, int y )
 {
-  if (_image != NULL)
+  if( _image != NULL )
   {
-
     SDL_Rect offset;
     offset.x = x;
     offset.y = y;
 
-    SDL_BlitSurface(_image, NULL, screen, &offset);
+    SDL_BlitSurface( _image, NULL, screen, &offset );
   }
 }
+
