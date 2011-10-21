@@ -23,44 +23,41 @@ configure_file(${CMAKE_SOURCE_DIR}/src/SpiderFish.h.in ${CMAKE_SOURCE_DIR}/src/S
 
 set (
   SPIFI_SOURCES
-src/SpiderFishGame.h
-src/Game.cpp
-src/ImageManager.cpp
-src/PlayerShip.cpp
-src/CollisionManager.cpp
-src/ShipHalo.cpp
-src/Bullet.h
-src/Sprite.h
-src/Sprite.cpp
-src/PhysicalEntity.h
-src/PhysicalEntity.cpp
-src/SingleShooter.cpp
-src/Game.h
-src/EnemyData.h
-src/GameObject.cpp
-src/Weapon.cpp
-src/EnemyData.cpp
-src/GameObject.h
-src/OrbBullet.h
-src/SpiderFishGame.cpp
-src/SingleShooter.h
-src/ImageManager.h
-src/PlayerShip.h
-src/Bullet.cpp
-src/OrbBullet.cpp
-src/EnemyPeeShooter.h
-src/Ship.h
-src/EnemyPeeShooter.cpp
-src/SpiderFish.h.in
-src/main.cpp
-src/Weapon.h
-src/EnemyShip.h
-src/CollisionManager.h
-src/tags
-src/EnemyShip.cpp
-src/Ship.cpp
-src/ShipHalo.h
-  )
+  src/SpiderFishGame.h
+  src/Game.cpp
+  src/ImageManager.cpp
+  src/PlayerShip.cpp
+  src/ShipHalo.cpp
+  src/Bullet.h
+  src/Sprite.h
+  src/Sprite.cpp
+  src/PhysicalEntity.h
+  src/PhysicalEntity.cpp
+  src/SingleShooter.cpp
+  src/Game.h
+  src/EnemyData.h
+  src/GameObject.cpp
+  src/Weapon.cpp
+  src/EnemyData.cpp
+  src/GameObject.h
+  src/OrbBullet.h
+  src/SpiderFishGame.cpp
+  src/SingleShooter.h
+  src/ImageManager.h
+  src/PlayerShip.h
+  src/Bullet.cpp
+  src/OrbBullet.cpp
+  src/EnemyPeeShooter.h
+  src/Ship.h
+  src/EnemyPeeShooter.cpp
+  src/SpiderFish.h.in
+  src/main.cpp
+  src/Weapon.h
+  src/EnemyShip.h
+  src/EnemyShip.cpp
+  src/Ship.cpp
+  src/ShipHalo.h
+)
 
 add_executable (spifi ${SPIFI_SOURCES})
 target_link_libraries (
