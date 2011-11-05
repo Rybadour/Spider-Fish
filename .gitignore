@@ -6,3 +6,8 @@ glfw-src/.DS_Store
 *.xcodeproj/xcuserdata/*.xcuserdatad
 *.xcodeproj/project.xcworkspace/xcuserdata/*
 build/*
+bin/*
+Spider-Fish.cbp
+Spider-Fish.depend
+Spider-Fish.layout
+obj/
